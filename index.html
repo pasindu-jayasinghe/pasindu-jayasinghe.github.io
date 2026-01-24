@@ -1,608 +1,688 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Profile &mdash; Free Website Template, Free HTML5 Template by freehtml5.co</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pasindu Jayasinghe - Artistic Innovator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<!-- 
-	//////////////////////////////////////////////////////
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray: #64748b;
+            --light: #f1f5f9;
+            --white: #ffffff;
+        }
 
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background: var(--dark);
+        }
 
-	//////////////////////////////////////////////////////
-	 -->
+        /* Header Section */
+        .header {
+            min-height: 10vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+background-image:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="rgba(255,255,255,0.12)"/><stop offset="100%" stop-color="rgba(255,255,255,0.03)"/></linearGradient></defs><rect width="1200" height="600" fill="url(%23bg)"/><rect x="120" y="140" rx="14" ry="14" width="200" height="120" fill="rgba(255,255,255,0.08)"/><rect x="880" y="320" rx="14" ry="14" width="220" height="140" fill="rgba(255,255,255,0.08)"/><path d="M100 400 L300 350 L500 380 L700 300 L900 330 L1100 250" stroke="rgba(255,255,255,0.25)" stroke-width="3" fill="none"/><circle cx="300" cy="350" r="6" fill="rgba(255,255,255,0.5)"/><circle cx="500" cy="380" r="6" fill="rgba(255,255,255,0.5)"/><circle cx="700" cy="300" r="6" fill="rgba(255,255,255,0.5)"/><circle cx="900" cy="330" r="6" fill="rgba(255,255,255,0.5)"/><text x="90" y="520" font-size="70" fill="rgba(255,255,255,0.12)" font-weight="700">$</text><text x="520" y="140" font-size="60" fill="rgba(255,255,255,0.12)" font-weight="700">₿</text><text x="980" y="110" font-size="65" fill="rgba(255,255,255,0.12)" font-weight="700">₹</text><text x="760" y="520" font-size="60" fill="rgba(255,255,255,0.12)" font-weight="700">€</text></svg>');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+        }
 
-	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+        .header-content {
+            text-align: center;
+            color: var(--white);
+            z-index: 2;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
 
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #667eea, #764ba2);
+            padding: 6px;
+            margin: 0 auto 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
 
-	</head>
-	<body>
-		
-	<div class="fh5co-loader"></div>
-	
-	<div id="page">	
-	<header id="fh5co-header" class="fh5co-cover js-fullheight" role="banner" style="background-image:url(images/cover_bg_3.jpg);" data-stellar-background-ratio="0.5">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center">
-					<div class="display-t js-fullheight">
-						<div class="display-tc js-fullheight animate-box" data-animate-effect="fadeIn">
-							<div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
-							<h1><span>Pasindu Jayasinghe</span></h1>
-							<h3><span>Artistic innovator</span></h3>
-							<p>
-								<ul class="fh5co-social-icons">
-									<li><a href="#"><i class="icon-twitter2"></i></a></li>
-									<li><a href="#"><i class="icon-facebook2"></i></a></li>
-									<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-									<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-								</ul>
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
 
-	<div id="fh5co-about" class="animate-box" style="margin-bottom: 0; padding-bottom: 0; background-color: rgba(240, 240, 240, 0.8);" >
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<!-- <h2>Who am I? 🤔</h2> -->
-					<h2 style="color: #333; font-weight: bold;">Who am I? 🤔</h2>
+        .profile-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--white);
+            background-image: url('images/user-3.jpg');
+            background-size: cover;
+            background-position: center;
+        }
 
-					<p>A tech enthusiast with a passion for innovation, I thrive on merging simplicity with artistic flair. Constantly seeking ways to blend technology and art seamlessly🌟.</p>
+        .header-content h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-				</div>
-				
-			</div>
-			<!-- <div class="row">
-				<div class="col-md-4">
-					<ul class="info">
-						<li><span class="first-block">Full Name:</span><span class="second-block">Louie Jie Mahusay</span></li>
-						<li><span class="first-block">Phone:</span><span class="second-block">+ 1235 2355 98</span></li>
-						<li><span class="first-block">Email:</span><span class="second-block">info@yoursite.com</span></li>
-						<li><span class="first-block">Website:</span><span class="second-block">www.yoursite.com</span></li>
-						<li><span class="first-block">Address:</span><span class="second-block">198 West 21th Street, Suite 721 New York NY 10016</span></li>
-					</ul>
-				</div>
-				<div class="col-md-8">
-					<h2>Hello There!</h2>
-					<p>A tech enthusiast with a passion for innovation, I thrive on merging simplicity with artistic flair. Constantly seeking ways to blend technology and art seamlessly🌟.</p>
-					
-						<ul class="fh5co-social-icons">
-							<li><a href="#"><i class="icon-twitter2"></i></a></li>
-							<li><a href="#"><i class="icon-facebook3"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin2"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble2"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div> -->
-		</div>
-	</div>
+        .header-content h3 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
 
-	<div id="fh5co-resume" class="fh5co-bg-color" style="margin: 0;">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2 style="color: #333; font-weight: bold;">Journey So Far 🚀</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 col-md-offset-0">
-					<ul class="timeline">
-						<li class="timeline-heading text-center animate-box">
-							<div><h3>Work Experience</h3></div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Software Engineer</h3>
-									<span class="company">PayMedia - 2024/Feb - Present</span>
-								</div>
-								<div class="timeline-body">
-									<p>Currently employed as a backend software engineer in the fintech sector.</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Software Engineer</h3>
-									<span class="company">ClimateSI - 2021/June - 2024/Jan</span>
-								</div>
-								<div class="timeline-body">
-									<p>
-										Worked as a software engineer specializing in carbon industry enterprise applications.</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-suitcase"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Software Engineer (Intern)</h3>
-									<span class="company">SLT Mobitel - 2019/Jan - 2019/Apr</span>
-								</div>
-								<div class="timeline-body">
-									<p>Interned as a software engineer, contributed to an internal billing project.</p>
-								</div>
-							</div>
-						</li>
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            list-style: none;
+        }
 
-						<br>
-						<li class="timeline-heading text-center animate-box">
-							<div><h3>Education</h3></div>
-						</li>
-						<!-- <li class="timeline-inverted animate-box">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Masters Degree</h3>
-									<span class="company">University Name - 2007 - 2009</span>
-								</div>
-								<div class="timeline-body">
-									<p>Far far away, behind the word mountains, they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</li> -->
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Bachelors Degree</h3>
-									<span class="company">University of Ruhuna - 2016/Nov - 2021/Dec</span>
-								</div>
-								<div class="timeline-body">
-									<p>Completed my Bachelor's Degree in Electrical and Information Engineering at Faculty of Engineering, University of Ruhuna.</p>
-								</div>
-							</div>
-						</li>
-						<li class="timeline-inverted animate-box">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Diploma Course</h3>
-									<span class="company">Esoft Metro Campus - 2015 - 2016</span>
-								</div>
-								<div class="timeline-body">
-									<p>Completed  Dimploma in Software Engineering at Esoft Metro Campus, Sri Lanka.</p>
-								</div>
-							</div>
-						</li>
-						<li class="animate-box timeline-unverted">
-							<div class="timeline-badge"><i class="icon-graduation-cap"></i></div>
-							<div class="timeline-panel">
-								<div class="timeline-heading">
-									<h3 class="timeline-title">Graduation</h3>
-									<span class="company">Dhammissara National College  - 2002 - 2015</span>
-								</div>
-								<div class="timeline-body">
-									<p>Completed my O/L and A/L examinations at Dhammissara National College.</p>
-								</div>
-							</div>
-						</li>
-			    	</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	
+        .social-icons a {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-	<div id="fh5co-features" class="animate-box">
-		<div class="container">
-			<div class="services-padding">
-				<div class="row">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<h2 style="color: #333; font-weight: bold;">Connect with Me</h2>
-					</div>
-				</div>
-				<div class="row">
-					<!-- <div class="col-md-4 text-center">
-						<div class="feature-left">
-							<span class="icon">
-								<img src="images/java.png" style="max-width: 100%; max-height: 100%;" />
-							</span>
-						
-							<div class="feature-copy">
-								<h3>Web Design</h3>
-								<p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit.</p>
-							</div>
-						</div>
-					</div> -->
-					<a href="https://www.linkedin.com/in/pasindu-jayasinghe/">
-						<div class="col-md-4 text-center">
-						  <div class="feature-left">
-							<span class="icon">
-							  <img src="images/linkedin.png" style="max-width: 100%; max-height: 100%;" />
-							</span>
-							<div class="feature-copy">
-							  <h3>Pasindu Jayasinghe</h3>
-							  <p>Dive into my professional universe.</p>
-							</div>
-						  </div>
-						</div>
-					  </a>
-					  <a href="https://stackoverflow.com/users/6477792/pasindu-jayasinghe">
-					<div class="col-md-4 text-center">
-						<div class="feature-left">
-							<!-- <span class="icon"> -->
-								<img src="images/stackoverflow.png" style="width: 120px; height: auto;" />
-							<!-- </span> -->
-							<div class="feature-copy">
-								<h3>pasindu-jayasinghe</h3>
-								<p>Explore the syntax of my coding world.</p>
-							</div>
-						</div>
-					</div>
-				</a>
-				<a href="https://github.com/pasindu-jayasinghe">
+        .social-icons a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
 
-					<div class="col-md-4 text-center">
-						<div class="feature-left">
-							<span class="icon">
-								<img src="images/github-logo.png" style="max-width: 100%; max-height: 100%;" />
-							</span>
-							<div class="feature-copy">
-								<h3>pasindu-jayasinghe</h3>
-								<p>Dive into the heart of my projects.</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</a>
+        /* About Section */
+        .about {
+            padding: 6rem 2rem;
+            background: #1a202c;
+        }
 
-				<div class="row">
-					<a href="https://www.facebook.com/pasicode/">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-					<div class="col-md-4 text-center">
+        .section-heading {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-						<div class="feature-left">
-							<span class="icon">
-								<img src="images/facebook.png" style="max-width: 100%; max-height: 100%;" />
-							</span>
-							<div class="feature-copy">
-								<h3>pasicode</h3>
-								<p>Connect with me in the social tapestry.</p>
-							</div>
-						</div>
+        .section-heading h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-					</div>
-					</a>
-					<a href="https://twitter.com/pasindu_jaya">
-					<div class="col-md-4 text-center">
-						<div class="feature-left">
-							<!-- <span class="icon"> -->
-								<img src="images/twitter.png" style="width: 120px; height: auto;" />
-								<!-- </span> -->
-							<div class="feature-copy">
-								<h3>Pasindu Jayasinghe</h3>
-								<p>Infrequent tweets Infrequent tweets </p>
-							</div>
-						</div>
+        .section-heading p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-					</div>
-					</a>
-					<a href="https://pasicode.blogspot.com">
+        /* Timeline Section */
+        .timeline-section {
+            padding: 6rem 2rem;
+            background: #0f172a;
+        }
 
-					<div class="col-md-4 text-center">
-						<div class="feature-left">
-							<!-- <span class="icon"> -->
-								<img src="images/pasicode.png" style="width: 190px; height: auto;" />
-							<!-- </span> -->
-							<div class="feature-copy">
-								<h3>pasiCode++</h3>
-								<p>See what's happening on my blog.</p>
-							</div>
-						</div>
-					</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
 
-	<div id="fh5co-skills" class="animate-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<!-- <h2 style="color: #333; font-weight: bold;"><Tech Experience/></h2> -->
-					<h2 style="color: #333; font-weight: bold;">&lt;Tech Experience/&gt;</h2>
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+        }
 
-				</div>
-			</div>
-			<div class="row row-pb-md">
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<img src="images/java.png" style="max-width: 100%; max-height: 100%;" />
-				
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<img src="images/spring.png" style="max-width: 100%; max-height: 100%;" />
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
 
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<img src="images/angular.png" style="max-width: 100%; max-height: 100%;" />
-				</div>
+        .timeline-item.left {
+            flex-direction: row-reverse;
+        }
 
-				<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-					<img src="images/nestjs.svg" style="max-width: 100%; max-height: 100%;" />
-				</div>
-			
-			</div>
+        .timeline-content {
+            width: calc(50% - 50px);
+            padding: 2rem;
+            background: #1e293b;
+            border-radius: 16px;
+           /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);*/
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* CHANGED: reduced from 0 10px 30px */
 
-		</div>
-	</div>
+            transition: all 0.3s ease;  
+            border: 1px solid #334155;
+        }
 
-	<div id="fh5co-work" class="fh5co-bg-dark">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Work</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-1.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-2.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Brading</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-3.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-4.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Design</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-5.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Website</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-6.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-7.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Brading</span>
-						</div>
-					</a>
-				</div>
-				<div class="col-md-3 text-center col-padding animate-box">
-					<a href="#" class="work" style="background-image: url(images/portfolio-8.jpg);">
-						<div class="desc">
-							<h3>Project Name</h3>
-							<span>Illustration</span>
-						</div>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+        .timeline-content:hover {
+            transform: translateY(-5px);
+           /* box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25);*/
+            box-shadow: 0 8px 16px rgba(99, 102, 241, 0.15);  /* CHANGED: reduced from 0 20px 40px */
 
-	<div id="fh5co-blog">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Post on Medium</h2>
-					<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-1.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Photoshoot On The Street</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-2.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Surfing at Philippines</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="fh5co-blog animate-box">
-						<a href="#" class="blog-bg" style="background-image: url(images/portfolio-3.jpg);"></a>
-						<div class="blog-text">
-							<span class="posted_on">Mar. 15th 2016</span>
-							<h3><a href="#">Capture Living On Uderwater</a></h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-							<ul class="stuff">
-								<li><i class="icon-heart2"></i>249</li>
-								<li><i class="icon-eye2"></i>308</li>
-								<li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
-							</ul>
-						</div> 
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div id="fh5co-started" class="fh5co-bg-dark">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Hire Me!</h2>
-					<p> Feel free to connect with me to discuss potential collaborations. I look forward to hearing from you!.</p>
-					<p><a href="#" class="btn btn-default btn-lg">Contact Me</a></p>
-				</div>
-			</div>
-		</div>
-	</div>
+            border-color: #6366f1;
+        }
 
-	<!-- <div id="fh5co-consult">
-		<div class="video fh5co-video" style="background-image: url(images/cover_bg_1.jpg);">
-			<div class="overlay"></div>
-		</div>
-		<div class="choose animate-box">
-			<h2>Contact</h2>
-			<form action="#">
-				<div class="row form-group">
-					<div class="col-md-6">
-						<input type="text" id="fname" class="form-control" placeholder="Your firstname">
-					</div>
-				</div>
-				<div class="row form-group">
-					<div class="col-md-6">
-						<input type="text" id="lname" class="form-control" placeholder="Your lastname">
-					</div>
-				</div>
+        .timeline-badge {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+        }
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<input type="text" id="email" class="form-control" placeholder="Your email address">
-					</div>
-				</div>
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #e2e8f0;
+        }
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<input type="text" id="subject" class="form-control" placeholder="Your subject of this message">
-					</div>
-				</div>
+        .timeline-content .company {
+            color: #a78bfa;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 1rem;
+        }
 
-				<div class="row form-group">
-					<div class="col-md-12">
-						<textarea name="message" id="message" cols="30" rows="10" class="form-control" placeholder="Say something about us"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<input type="submit" value="Send Message" class="btn btn-primary">
-				</div>
+        .timeline-heading-text {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 4rem 0 3rem;
+            color: #e2e8f0;
+        }
 
-			</form>	
-		</div>
-	</div> -->
-<!-- 
-	<div id="map" class="fh5co-map"></div>
-	</div>
-	 -->
-	<div id="fh5co-footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<p>&copy; 2024 pasiCode. All Rights Reserved. <br>Designed by Pasindu Jayasinghe</p>
-				</div>
-			</div>
-		</div>
-	</div>
+        /* Connect Section */
+        .connect-section {
+            padding: 6rem 2rem;
+            background: #1a202c;
+        }
 
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
-	</div>
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Stellar Parallax -->
-	<script src="js/jquery.stellar.min.js"></script>
-	<!-- Easy PieChart -->
-	<script src="js/jquery.easypiechart.min.js"></script>
-	<!-- Google Map -->
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
-	<script src="js/google_map.js"></script>
-	
-	<!-- Main -->
-	<script src="js/main.js"></script>
+        .connect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
 
-	</body>
+        .connect-card {
+            background: #1e293b;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #334155;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .connect-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(99, 102, 241, 0.15);  /* CHANGED: reduced from 0 20px 40px */
+            border-color: var(--primary);
+        }
+
+        .connect-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .connect-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /*filter: brightness(0) invert(1); */
+        }
+
+        .connect-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #e2e8f0;
+        }
+
+        .connect-card p {
+            color: #94a3b8;
+        }
+
+        /* Tech Section */
+        .tech-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: var(--white);
+        }
+
+        .tech-section .section-heading h2 {
+            background: linear-gradient(135deg, #fff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+        }
+
+        .tech-item img {
+            max-width: 100%;
+            height: 100px;
+            object-fit: contain;
+            /* filter: brightness(0) invert(1); */
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: row !important;
+            }
+
+            .timeline-content {
+                width: calc(100% - 100px);
+                margin-left: 70px;
+            }
+
+            .timeline-badge {
+                left: 30px;
+            }
+
+            .section-heading h2 {
+                font-size: 2rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <section class="header">
+        <div class="header-content">
+            <div class="profile-image">
+                <div class="profile-image-inner"></div>
+            </div>
+            <h1>Pasindu Jayasinghe</h1>
+            <h3>Artistic innovator</h3>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Who am I?..💡..⚙️</h2>
+                <p>A tech enthusiast with a passion for innovation, I thrive on merging simplicity with artistic flair. Constantly seeking ways to blend technology and art seamlessly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Journey So Far 🚀</h2>
+            </div>
+            
+            <h3 class="timeline-heading-text">Work Experience</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <span class="company">PayMedia - 2024/Feb - Present</span>
+                        <p>Currently employed as a backend software engineer in the fintech sector.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <h3>Software Engineer</h3>
+                        <span class="company">ClimateSI - 2021/June - 2024/Jan</span>
+                        <p>Worked as a software engineer specializing in carbon industry enterprise applications.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline-content">
+                        <h3>Software Engineer (Intern)</h3>
+                        <span class="company">SLT Mobitel - 2019/Jan - 2019/Apr</span>
+                        <p>Interned as a software engineer, contributed to an internal billing project.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="timeline-heading-text">Education</h3>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h3>Bachelors Degree</h3>
+                        <span class="company">University of Ruhuna - 2016/Nov - 2021/Dec</span>
+                        <p>Completed my Bachelor's Degree in Electrical and Information Engineering at Faculty of Engineering, University of Ruhuna.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h3>Diploma Course</h3>
+                        <span class="company">Esoft Metro Campus - 2015 - 2016</span>
+                        <p>Completed Dimploma in Software Engineering at Esoft Metro Campus, Sri Lanka.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-content">
+                        <h3>Graduation</h3>
+                        <span class="company">Dhammissara National College - 2002 - 2015</span>
+                        <p>Completed my O/L and A/L examinations at Dhammissara National College.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect -->
+    <section class="connect-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>Connect with Me</h2>
+            </div>
+            <div class="connect-grid">
+                <a href="https://www.linkedin.com/in/pasindu-jayasinghe/" class="connect-card">
+                    <div class="connect-icon">
+                        <img src="images/linkedin.png" alt="LinkedIn">
+                    </div>
+                    <h3>Pasindu Jayasinghe</h3>
+                    <p>Dive into my professional universe.</p>
+                </a>
+
+                <a href="https://stackoverflow.com/users/6477792/pasindu-jayasinghe" class="connect-card">
+                    <div class="connect-icon">
+                        <img src="images/stackoverflow.png" alt="Stack Overflow">
+                    </div>
+                    <h3>pasindu-jayasinghe</h3>
+                    <p>Explore the syntax of my coding world.</p>
+                </a>
+
+                <a href="https://github.com/pasindu-jayasinghe" class="connect-card">
+                    <div class="connect-icon">
+                        <img src="images/github-logo.png" alt="GitHub">
+                    </div>
+                    <h3>pasindu-jayasinghe</h3>
+                    <p>Dive into the heart of my projects.</p>
+                </a>
+
+                <a href="https://www.facebook.com/pasicode/" class="connect-card">
+                    <div class="connect-icon">
+                        <img src="images/facebook.png" alt="Facebook">
+                    </div>
+                    <h3>pasicode</h3>
+                    <p>Connect with me in the social tapestry.</p>
+                </a>
+
+                <a href="https://twitter.com/pasindu_jaya" class="connect-card">
+                    <div class="connect-icon">
+                        <img src="images/twitter.png" alt="Twitter">
+                    </div>
+                    <h3>Pasindu Jayasinghe</h3>
+                    <p>Infrequent tweets Infrequent tweets</p>
+                </a>
+
+                <a href="https://pasicode.blogspot.com" class="connect-card">
+                    <div class="connect-icon">
+                        <img src="images/pasicode.png" alt="Blog">
+                    </div>
+                    <h3>pasiCode++</h3>
+                    <p>See what's happening on my blog.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Experience -->
+    <section class="tech-section">
+        <div class="container">
+            <div class="section-heading">
+                <h2>&lt;Tech Experience/&gt;</h2>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <img src="images/java.png" alt="Java">
+                </div>
+                <div class="tech-item">
+                    <img src="images/spring.png" alt="Spring">
+                </div>
+                <div class="tech-item">
+                    <img src="images/angular.png" alt="Angular">
+                </div>
+                <div class="tech-item">
+                    <img src="images/nestjs.svg" alt="NestJS">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Hire Me!</h2>
+            <p>Feel free to connect with me to discuss potential collaborations. I look forward to hearing from you!</p>
+            <a href="#" class="btn">Contact Me</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 pasiCode. All Rights Reserved.<br>Designed by Pasindu Jayasinghe</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .connect-card, .tech-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
 </html>
-
