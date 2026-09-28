@@ -1,19 +1,23 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Pasindu Jayasinghe - Artistic Innovator</title>
+    <title>Pasindu Jayasinghe - Software Engineer &amp; Backend Engineer</title>
+    <meta name="description" content="Pasindu Jayasinghe (Pasi) is a Software Engineer &amp; Backend Engineer based in Melbourne, Australia, specializing in Java, Spring Boot, microservices, REST APIs, fintech, and cloud-native systems.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
 
         :root {
             --primary: #6366f1;
@@ -38,238 +42,255 @@
         /* ─── HERO SECTION ─── */
         .header {
             min-height: 100vh;
-            background: #0b0f1a;
+            background: #0a1220;
             position: relative;
             display: flex;
             align-items: center;
+            justify-content: center;
             overflow: hidden;
         }
 
-        /* Ambient gradient orbs */
-        .header::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%);
-            top: -100px;
-            left: -100px;
-            pointer-events: none;
-        }
-
-        .header::after {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(139,92,246,0.14) 0%, transparent 70%);
-            bottom: -80px;
-            right: 10%;
-            pointer-events: none;
-        }
-
-        /* Subtle dot grid */
+        .header::before,
+        .header::after,
         .hero-grid-bg {
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
-            background-size: 32px 32px;
-            pointer-events: none;
+            display: none;
         }
 
         .header-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 4.5rem;
             color: var(--white);
             z-index: 2;
-            padding: 4rem 2rem;
-            max-width: 1200px;
+            padding: 4.5rem 2rem;
+            max-width: 1040px;
             margin: 0 auto;
             width: 100%;
-            animation: fadeInUp 0.9s ease-out;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* ── LEFT: Photo ── */
+        /* ── LEFT: Photo & Details ── */
         .hero-left {
+            flex: 0 0 240px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1.5rem;
+            gap: 1.25rem;
         }
 
         .profile-image {
-            width: 260px;
-            height: 260px;
+            width: 230px;
+            height: 230px;
             border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
-            animation: float 6s ease-in-out infinite;
+            background: #18233d;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
             flex-shrink: 0;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50%       { transform: translateY(-14px); }
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .profile-image-inner {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background-image: url('images/user-3.jpg');
+            background-image: url('images/profile.jpg?v=3');
             background-size: cover;
-            background-position: center;
-            background-color: #1e293b;
+            background-position: center 10%;
+            background-color: #18233d;
         }
 
-        /* Availability badge below photo */
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(34,197,94,0.12);
-            border: 1px solid rgba(34,197,94,0.3);
-            color: #4ade80;
-            font-size: 0.8rem;
-            font-weight: 600;
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            letter-spacing: 0.04em;
-        }
-
-        .hero-badge::before {
-            content: '';
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background: #4ade80;
-            box-shadow: 0 0 0 3px rgba(74,222,128,0.25);
-            animation: pulse-dot 2s infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { box-shadow: 0 0 0 3px rgba(74,222,128,0.25); }
-            50%       { box-shadow: 0 0 0 6px rgba(74,222,128,0.08); }
+        /* Standard Subtitle under profile */
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #94a3b8;
+            text-align: center;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
         }
 
         /* Social row under photo */
         .social-icons {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.65rem;
             list-style: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .social-icons a {
+            width: 42px;
+            height: 42px;
+            border-radius: 8px;
+            background: #0f1930;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b9bb4;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: #162445;
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Hero interests strip */
+        .hero-interests {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.35rem;
+        }
+
+        .hero-interests-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0;
+            color: #64748b;
+        }
+
+        .hero-interests-pills {
+            display: flex;
+            gap: 0.5rem;
             flex-wrap: wrap;
             justify-content: center;
         }
 
-        .social-icons a {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 1.1rem;
-            transition: all 0.25s ease;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .social-icons a:hover {
-            background: rgba(99,102,241,0.2);
-            border-color: rgba(99,102,241,0.5);
-            color: #fff;
-            transform: translateY(-3px);
-        }
-
-        /* ── RIGHT: Text ── */
-        .hero-right {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .hero-eyebrow {
+        .hero-interest-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
             font-size: 0.8rem;
-            font-weight: 600;
-            color: #a78bfa;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
+            font-weight: 500;
+            color: #94a3b8;
+            background: #0f1930;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 0.35rem 0.95rem;
+            border-radius: 50px;
+            transition: all 0.2s ease;
         }
 
-        .hero-eyebrow span {
-            width: 24px;
-            height: 2px;
-            background: #a78bfa;
-            border-radius: 2px;
+        .hero-interest-pill:hover {
+            border-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        /* ── RIGHT: Content ── */
+        .hero-right {
+            flex: 0 1 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.35rem;
         }
 
         .header-content h1 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: clamp(2.5rem, 4.2vw, 3.75rem);
             font-weight: 700;
-            line-height: 1.1;
+            line-height: 1.15;
             margin: 0;
-            background: linear-gradient(135deg, #fff 40%, #a5b4fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
+            background: none;
+            -webkit-text-fill-color: initial;
+            letter-spacing: -0.02em;
         }
 
-        .header-content h3 {
-            font-size: 1.15rem;
+        .hero-bio {
+            font-size: 1.05rem;
             font-weight: 400;
-            color: #94a3b8;
+            color: #8b9bb4;
             margin: 0;
-            line-height: 1.7;
+            line-height: 1.6;
+            max-width: 580px;
         }
 
         /* Stats row */
         .hero-stats {
             display: flex;
-            gap: 1.5rem;
+            align-items: center;
+            gap: 2rem;
+            margin: 0.25rem 0;
             flex-wrap: wrap;
         }
 
         .hero-stat {
             display: flex;
             flex-direction: column;
-            gap: 0.15rem;
+            gap: 0.2rem;
         }
 
         .hero-stat-num {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.75rem;
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-size: 1.85rem;
             font-weight: 700;
-            color: #fff;
+            color: #ffffff;
             line-height: 1;
         }
 
         .hero-stat-label {
-            font-size: 0.78rem;
-            color: #64748b;
-            font-weight: 500;
-            letter-spacing: 0.03em;
+            font-size: 0.85rem;
+            color: #8b9bb4;
+            font-weight: 400;
         }
 
         .hero-stat-divider {
             width: 1px;
-            background: rgba(255,255,255,0.1);
-            align-self: stretch;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.1);
+            align-self: center;
             margin: 0 0.25rem;
+        }
+
+        /* Tech pill tags */
+        .hero-tags {
+            display: flex;
+            gap: 0.55rem;
+            flex-wrap: wrap;
+            max-width: 540px;
+        }
+
+        .hero-tag {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: #5c8aff;
+            background: rgba(47, 82, 168, 0.14);
+            border: 1.5px solid #2f52a8;
+            padding: 0.35rem 0.95rem;
+            border-radius: 50px;
+            transition: all 0.2s ease;
+        }
+
+        .hero-tag:hover {
+            border-color: #5c8aff;
+            background: rgba(47, 82, 168, 0.28);
+            color: #93c5fd;
+            transform: translateY(-1px);
         }
 
         /* CTA buttons */
@@ -277,77 +298,72 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
+            margin-top: 0.4rem;
         }
 
         .btn-hero-primary {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.75rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
-            color: #fff;
+            justify-content: center;
+            padding: 0.75rem 1.65rem;
+            background: #5078f8;
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: all 0.25s ease;
-            box-shadow: 0 4px 20px rgba(99,102,241,0.35);
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(80, 120, 248, 0.3);
+            border: none;
         }
 
         .btn-hero-primary:hover {
+            background: #4168e8;
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(99,102,241,0.5);
+            box-shadow: 0 6px 20px rgba(80, 120, 248, 0.45);
         }
 
         .btn-hero-secondary {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.75rem;
-            background: rgba(255,255,255,0.06);
-            color: #e2e8f0;
+            justify-content: center;
+            padding: 0.75rem 1.65rem;
+            background: #0b1222;
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 12px;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 0.95rem;
-            border: 1px solid rgba(255,255,255,0.12);
-            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: all 0.2s ease;
         }
 
         .btn-hero-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.25);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
-        }
-
-        /* Tech pill tags */
-        .hero-tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-tag {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #a78bfa;
-            background: rgba(139,92,246,0.1);
-            border: 1px solid rgba(139,92,246,0.2);
-            padding: 0.3rem 0.75rem;
-            border-radius: 50px;
         }
 
         /* Responsive hero */
         @media (max-width: 900px) {
             .header-content {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 text-align: center;
                 gap: 2.5rem;
+                padding: 3rem 1.5rem;
             }
-            .hero-left { order: -1; }
-            .hero-eyebrow, .hero-actions, .hero-stats, .hero-tags {
+
+            .hero-left {
+                flex: 0 0 auto;
+                order: -1;
+            }
+
+            .hero-actions,
+            .hero-stats,
+            .hero-tags {
                 justify-content: center;
             }
+
             .profile-image {
                 width: 200px;
                 height: 200px;
@@ -356,8 +372,206 @@
 
         /* About Section */
         .about {
-            padding: 6rem 2rem;
-            background: #1a202c;
+            padding: 7rem 2rem;
+            background: #0d1117;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle grid background */
+        .about::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        /* About layout — two-column: left bio, right card */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Left: personal bio */
+        .about-bio .about-name {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 0.65rem;
+        }
+
+        .about-bio .about-name .name-highlight {
+            background: linear-gradient(135deg, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-bio .about-role {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #a78bfa;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.1rem;
+        }
+
+        .about-bio .about-desc {
+            font-size: 0.98rem;
+            color: #94a3b8;
+            line-height: 1.65;
+            margin-bottom: 0.95rem;
+        }
+
+        .about-bio .about-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .about-bio .about-tag {
+            display: inline-block;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+            background: rgba(167, 139, 250, 0.1);
+            border: 1px solid rgba(167, 139, 250, 0.25);
+            color: #a78bfa;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+        }
+
+        /* Right: card */
+        .about-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(167, 139, 250, 0.18);
+            border-radius: 20px;
+            padding: 2.8rem 2.2rem 2.5rem;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle glow top-left corner of card */
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: -60px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .about-card .card-headline {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: #ffffff;
+            margin-bottom: 0.8rem;
+        }
+
+        .about-card .card-headline .arrow {
+            background: linear-gradient(135deg, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-card .card-sub {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.65;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Process flow inside card */
+        .about-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .process-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: #0b0f1a;
+            border: 2px solid rgba(167, 139, 250, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            color: #a78bfa;
+            transition: all 0.35s ease;
+            position: relative;
+            box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.06);
+        }
+
+        .process-icon:hover {
+            border-color: #a78bfa;
+            background: #130d2a;
+            box-shadow: 0 0 0 8px rgba(124, 58, 237, 0.1), 0 0 24px rgba(167, 139, 250, 0.35);
+            transform: translateY(-5px);
+            color: #c4b5fd;
+        }
+
+        .process-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .process-connector {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(167, 139, 250, 0.5), rgba(236, 72, 153, 0.5));
+            position: relative;
+            top: -1.5rem;
+            flex-shrink: 1;
+            min-width: 12px;
+            max-width: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .process-icon {
+                width: 58px;
+                height: 58px;
+                font-size: 1rem;
+            }
+            .about-card {
+                padding: 2rem 1.4rem;
+            }
         }
 
         .container {
@@ -366,26 +580,50 @@
         }
 
         .section-heading {
-            text-align: center;
+            text-align: left;
             margin-bottom: 4rem;
+        }
+
+        /* Eyebrow label: — ABOUT */
+        .section-eyebrow {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 1.1rem;
+        }
+
+        .section-eyebrow::before {
+            content: '';
+            display: inline-block;
+            width: 2rem;
+            height: 2px;
+            background: #7c3aed;
+            flex-shrink: 0;
+        }
+
+        .section-eyebrow span {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #a78bfa;
         }
 
         .section-heading h2 {
             font-family: 'Space Grotesk', sans-serif;
             font-size: 3rem;
-            font-weight: 700;
+            font-weight: 800;
+            line-height: 1.1;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, #a78bfa, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
         }
 
         .section-heading p {
-            font-size: 1.2rem;
+            font-size: 1.05rem;
             color: #94a3b8;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 680px;
+            line-height: 1.7;
         }
 
         /* ─── Experience & Education Two-Column Layout ─── */
@@ -633,6 +871,23 @@
             line-height: 1.3;
         }
 
+        .shipped-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 0.9rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #818cf8;
+            text-decoration: none;
+            transition: color 0.2s ease, gap 0.2s ease;
+        }
+
+        .shipped-link:hover {
+            color: #a5b4fc;
+            gap: 0.6rem;
+        }
+
         /* Connect Section */
         .connect-section {
             padding: 5rem 2rem;
@@ -710,10 +965,7 @@
         }
 
         .tech-section .section-heading h2 {
-            background: linear-gradient(135deg, #fff, #a5b4fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #ffffff;
         }
 
         .tech-grid {
@@ -808,147 +1060,148 @@
             }
         }
 
-   .medium-section {
-    padding: 6rem 2rem;
-    background: #0f172a;
-}
+        .medium-section {
+            padding: 6rem 2rem;
+            background: #0f172a;
+        }
 
-.medium-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
-    justify-content: center;
-    gap: 1.75rem;
-    margin-top: 3rem;
-}
+        .medium-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 340px));
+            justify-content: center;
+            gap: 1.75rem;
+            margin-top: 3rem;
+        }
 
-.medium-card {
-    background: #1e293b;
-    border-radius: 14px;
-    border: 1px solid #334155;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.25s ease;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
-}
+        .medium-card {
+            background: #1e293b;
+            border-radius: 14px;
+            border: 1px solid #334155;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        }
 
-.medium-card:hover {
-    transform: translateY(-5px);
-    border-color: #6366f1;
-    box-shadow: 0 12px 28px rgba(99, 102, 241, 0.2);
-}
+        .medium-card:hover {
+            transform: translateY(-5px);
+            border-color: #6366f1;
+            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.2);
+        }
 
-.medium-card-image {
-    width: 100%;
-    height: 150px;
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-bottom: 1px solid #334155;
-    position: relative;
-}
+        .medium-card-image {
+            width: 100%;
+            height: 150px;
+            background: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid #334155;
+            position: relative;
+        }
 
-.medium-card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 0.4rem 0.6rem;
-    transition: transform 0.3s ease;
-}
+        .medium-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 0.4rem 0.6rem;
+            transition: transform 0.3s ease;
+        }
 
-.medium-card-image.cover img {
-    object-fit: cover;
-    padding: 0;
-}
+        .medium-card-image.cover img {
+            object-fit: cover;
+            padding: 0;
+        }
 
-.medium-card-image.placeholder {
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6366f1;
-    font-size: 2.2rem;
-}
+        .medium-card-image.placeholder {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6366f1;
+            font-size: 2.2rem;
+        }
 
-.medium-card:hover .medium-card-image img {
-    transform: scale(1.04);
-}
+        .medium-card:hover .medium-card-image img {
+            transform: scale(1.04);
+        }
 
-.medium-card-body {
-    padding: 1.1rem 1.25rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    justify-content: space-between;
-}
+        .medium-card-body {
+            padding: 1.1rem 1.25rem 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+        }
 
-.medium-card-domain {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.45rem;
-}
+        .medium-card-domain {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.45rem;
+        }
 
-.medium-card-domain i {
-    color: #a78bfa;
-}
+        .medium-card-domain i {
+            color: #a78bfa;
+        }
 
-.medium-card h3 {
-    font-size: 0.98rem;
-    font-weight: 600;
-    color: #f1f5f9;
-    line-height: 1.35;
-    margin-bottom: 0.45rem;
-    min-height: 2.7em;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
+        .medium-card h3 {
+            font-size: 0.98rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            line-height: 1.35;
+            margin-bottom: 0.45rem;
+            min-height: 2.7em;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-.medium-card p {
-    color: #94a3b8;
-    font-size: 0.84rem;
-    line-height: 1.45;
-    margin-bottom: 0.85rem;
-    min-height: 2.9em;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
+        .medium-card p {
+            color: #94a3b8;
+            font-size: 0.84rem;
+            line-height: 1.45;
+            margin-bottom: 0.85rem;
+            min-height: 2.9em;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
-.medium-card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0.6rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
+        .medium-card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 0.6rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
 
-.medium-card-footer span {
-    color: #a78bfa;
-    font-weight: 600;
-    font-size: 0.82rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    transition: gap 0.2s ease;
-}
+        .medium-card-footer span {
+            color: #a78bfa;
+            font-weight: 600;
+            font-size: 0.82rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: gap 0.2s ease;
+        }
 
-.medium-card:hover .medium-card-footer span {
-    gap: 0.55rem;
-    color: #c084fc;
-}
+        .medium-card:hover .medium-card-footer span {
+            gap: 0.55rem;
+            color: #c084fc;
+        }
+
         /* ─── TOP NAV BAR ─── */
         .navbar {
             position: fixed;
@@ -1129,6 +1382,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- ─── TOP NAVIGATION BAR ─── -->
@@ -1161,35 +1415,41 @@
 
     <!-- Hero -->
     <section class="header" id="hero">
-        <div class="hero-grid-bg"></div>
         <div class="header-content">
 
-            <!-- Left: Profile Photo -->
+            <!-- Left: Profile Photo & Details -->
             <div class="hero-left">
                 <div class="profile-image">
                     <div class="profile-image-inner"></div>
                 </div>
-                <div class="hero-badge">Available for opportunities</div>
+                <div class="hero-subtitle">Software &amp; Backend Engineer<br><span style="font-size: 0.85rem; color: #64748b; font-weight: 400;"><i class="fas fa-location-dot" style="margin-right: 4px;"></i>Melbourne, Australia</span></div>
                 <ul class="social-icons">
-                    <li><a href="https://twitter.com/pasindu_jaya" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://www.facebook.com/pasicode/" title="Facebook"><i class="fab fa-facebook"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/pasindu-jayasinghe/" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://twitter.com/pasindu_jaya" title="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/pasicode/" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/pasindu-jayasinghe/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
                     <li><a href="https://github.com/pasindu-jayasinghe" title="GitHub"><i class="fab fa-github"></i></a></li>
                 </ul>
+                <div class="hero-interests">
+                    <span class="hero-interests-label">Currently exploring</span>
+                    <div class="hero-interests-pills">
+                        <span class="hero-interest-pill">RAG</span>
+                        <span class="hero-interest-pill">AI Agents</span>
+                        <span class="hero-interest-pill">MCP</span>
+                        <span class="hero-interest-pill">Intelligent Automation</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Right: Text & CTA -->
             <div class="hero-right">
-                <div class="hero-eyebrow"><span></span>Software Engineer &amp; Fintech Builder</div>
 
-                <h1>Pasindu<br>Jayasinghe</h1>
+                <h1>Pasindu Jayasinghe</h1>
 
-                <h3>Backend engineer crafting scalable fintech systems.<br>
-                Passionate about clean architecture, system design, and turning complex problems into elegant solutions.</h3>
+                <p class="hero-bio">Software Engineer &amp; Backend Engineer based in Melbourne, Australia. Over 3 years of experience engineering scalable backend platforms across fintech and sustainability technology, with a strong focus on Java, Spring Boot, microservices, and cloud infrastructure.</p>
 
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <span class="hero-stat-num">5+</span>
+                        <span class="hero-stat-num">3+</span>
                         <span class="hero-stat-label">Years Experience</span>
                     </div>
                     <div class="hero-stat-divider"></div>
@@ -1207,19 +1467,16 @@
                 <div class="hero-tags">
                     <span class="hero-tag">Java</span>
                     <span class="hero-tag">Spring Boot</span>
-                    <span class="hero-tag">Angular</span>
-                    <span class="hero-tag">NestJS</span>
-                    <span class="hero-tag">Fintech</span>
-                    <span class="hero-tag">System Design</span>
+                    <span class="hero-tag">Microservices</span>
+                    <span class="hero-tag">REST APIs</span>
+                    <span class="hero-tag">AWS</span>
+                    <span class="hero-tag">Kubernetes</span>
+                    <span class="hero-tag">Distributed Systems</span>
                 </div>
 
                 <div class="hero-actions">
-                    <a href="#connect" class="btn-hero-primary" id="hero-cta-connect">
-                        <i class="fas fa-paper-plane"></i> Get in Touch
-                    </a>
-                    <a href="#journey" class="btn-hero-secondary" id="hero-cta-journey">
-                        <i class="fas fa-scroll"></i> My Journey
-                    </a>
+                    <a href="#connect" class="btn-hero-primary" id="hero-cta-connect">Get in touch</a>
+                    <a href="#journey" class="btn-hero-secondary" id="hero-cta-journey">My journey</a>
                 </div>
             </div>
 
@@ -1230,9 +1487,77 @@
     <span id="about"></span>
     <section class="about">
         <div class="container">
-            <div class="section-heading">
-                <h2>Who am I?..💡..⚙️</h2>
-                <p>A tech enthusiast with a passion for innovation, I thrive on merging simplicity with artistic flair. Constantly seeking ways to blend technology and art seamlessly.</p>
+            <div class="about-grid">
+
+                <!-- Left: Personal bio -->
+                <div class="about-bio">
+                    <div class="section-eyebrow" style="margin-bottom:0.85rem;">
+                        <span>About Me</span>
+                    </div>
+                    <h2 class="about-name">Hi, I'm <span class="name-highlight">Pasindu</span> <span style="font-weight:400; font-size:0.75em; color:#94a3b8;">(Pasi)</span></h2>
+                    <p class="about-role">Software &amp; Backend Engineer &bull; Melbourne, Australia</p>
+                    <p class="about-desc">
+                        With 3+ years of experience across fintech and sustainability tech, I specialize in building scalable backend systems—from digital banking and digital wallets to carbon footprint management platforms.
+                    </p>
+                    <p class="about-desc">
+                        I primarily work with Java, Spring Boot, microservices, AWS, and Kubernetes, while exploring practical AI integrations like RAG, AI agents, and MCP to build production-ready solutions.
+                    </p>
+                    <div class="about-tags">
+                        <span class="about-tag">Java</span>
+                        <span class="about-tag">Spring Boot</span>
+                        <span class="about-tag">Microservices</span>
+                        <span class="about-tag">AWS</span>
+                        <span class="about-tag">Kubernetes</span>
+                        <span class="about-tag">Fintech</span>
+                        <span class="about-tag">AI Agents</span>
+                    </div>
+                </div>
+
+                <!-- Right: Ideas → Reality card -->
+                <div class="about-card">
+                    <h3 class="card-headline">Ideas <span class="arrow">&rarr;</span> Reality</h3>
+                    <p class="card-sub">Business problem in, modern product out.
+                        I own the whole arc from architecture to deployment.</p>
+
+                    <div class="about-flow">
+
+                        <div class="process-step">
+                            <div class="process-icon">
+                                <i class="fa-regular fa-lightbulb"></i>
+                            </div>
+                            <span class="process-label">Idea</span>
+                        </div>
+
+                        <div class="process-connector"></div>
+
+                        <div class="process-step">
+                            <div class="process-icon">
+                                <i class="fa-solid fa-compass-drafting"></i>
+                            </div>
+                            <span class="process-label">Architect</span>
+                        </div>
+
+                        <div class="process-connector"></div>
+
+                        <div class="process-step">
+                            <div class="process-icon">
+                                <i class="fa-solid fa-hammer"></i>
+                            </div>
+                            <span class="process-label">Build</span>
+                        </div>
+
+                        <div class="process-connector"></div>
+
+                        <div class="process-step">
+                            <div class="process-icon">
+                                <i class="fa-solid fa-rocket"></i>
+                            </div>
+                            <span class="process-label">Ship</span>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1243,10 +1568,11 @@
     <section class="timeline-section">
         <div class="container">
             <div class="section-heading">
-                <h2>Journey &amp; Experience 🚀</h2>
-                <p style="color: #94a3b8; font-size: 1.05rem; margin-top: 0.5rem;">A track record of engineering leadership, AI systems, and high-impact software.</p>
+                <div class="section-eyebrow"><span>Journey &amp; Experience</span></div>
+                <h2>Building things that matter 🚀</h2>
+                <p>A track record of engineering leadership, AI systems, and high-impact software.</p>
             </div>
-            
+
             <div class="journey-grid">
                 <!-- Left Column: Experience & Education Timeline -->
                 <div class="exp-timeline">
@@ -1264,13 +1590,21 @@
                         <div class="exp-role">Software Engineer</div>
                         <div class="exp-location">Colombo, Sri Lanka</div>
                         <ul class="exp-bullets">
-                            <li>Led backend development for fintech platforms, ensuring secure and scalable transaction processing.</li>
-                            <li>Built and maintained REST APIs for payment systems, supporting high-volume transactions.</li>
-                            <li>Optimised database queries and implemented stored procedures, reducing query execution time by ~30%.</li>
-                            <li>Designed and implemented a Backend-for-Frontend (BFF) layer using WSO2 API Manager, improving API routing efficiency by ~20%.</li>
-                            <li>Designed compliance-related transaction rules to ensure secure and valid financial processing.</li>
-                            <li>Resolved production issues and improved system stability, reducing failures by ~20%.</li>
-                            <li style="margin-top: 0.6rem; color: #cbd5e1;"><strong style="color: #818cf8;">Tech Stack:</strong> Java, Spring Boot, REST, SOAP, Spring Data JPA, PostgreSQL, Maven, Git, ISO 20022</li>
+                            <li>Led backend development for fintech platforms, ensuring secure and scalable transaction
+                                processing.</li>
+                            <li>Built and maintained REST APIs for payment systems, supporting high-volume transactions.
+                            </li>
+                            <li>Optimised database queries and implemented stored procedures, reducing query execution
+                                time by ~30%.</li>
+                            <li>Designed and implemented a Backend-for-Frontend (BFF) layer using WSO2 API Manager,
+                                improving API routing efficiency by ~20%.</li>
+                            <li>Designed compliance-related transaction rules to ensure secure and valid financial
+                                processing.</li>
+                            <li>Resolved production issues and improved system stability, reducing failures by ~20%.
+                            </li>
+                            <li style="margin-top: 0.6rem; color: #cbd5e1;"><strong style="color: #818cf8;">Tech
+                                    Stack:</strong> Java, Spring Boot, REST, SOAP, Spring Data JPA, PostgreSQL, Maven,
+                                Git, ISO 20022</li>
                         </ul>
                     </div>
 
@@ -1285,12 +1619,18 @@
                         <div class="exp-location">Colombo, Sri Lanka</div>
                         <ul class="exp-bullets">
                             <li>Developed backend services for sustainability and climate data platforms.</li>
-                            <li>Built the Smart Carbon Calculator V2 with modules for emission calculation, verification, and reporting.</li>
+                            <li>Built the Smart Carbon Calculator V2 with modules for emission calculation,
+                                verification, and reporting.</li>
                             <li>Led system maintenance and production support, maintaining availability of ~98-99%.</li>
-                            <li>Developed TraCAD, a microservices-based GHG assessment tool using international methodologies.</li>
-                            <li>Implemented GHG calculation methodologies based on UNFCCC, JICA, and ICAT frameworks.</li>
-                            <li>Conducted performance tuning to enhance system efficiency and reduce response times across services.</li>
-                            <li style="margin-top: 0.6rem; color: #cbd5e1;"><strong style="color: #818cf8;">Tech Stack:</strong> Java, Spring Boot, Spring Data JPA, Jakarta EE, NestJS, Angular, MySQL, REST, Maven, Git</li>
+                            <li>Developed TraCAD, a microservices-based GHG assessment tool using international
+                                methodologies.</li>
+                            <li>Implemented GHG calculation methodologies based on UNFCCC, JICA, and ICAT frameworks.
+                            </li>
+                            <li>Conducted performance tuning to enhance system efficiency and reduce response times
+                                across services.</li>
+                            <li style="margin-top: 0.6rem; color: #cbd5e1;"><strong style="color: #818cf8;">Tech
+                                    Stack:</strong> Java, Spring Boot, Spring Data JPA, Jakarta EE, NestJS, Angular,
+                                MySQL, REST, Maven, Git</li>
                         </ul>
                     </div>
 
@@ -1304,7 +1644,8 @@
                         <div class="exp-role">Master of Information Technology and Systems</div>
                         <div class="exp-location">Melbourne, Australia</div>
                         <ul class="exp-bullets">
-                            <li>Postgraduate studies focusing on enterprise software architecture, cloud platforms, and advanced information systems.</li>
+                            <li>Postgraduate studies focusing on enterprise software architecture, cloud platforms, and
+                                advanced information systems.</li>
                         </ul>
                     </div>
 
@@ -1315,10 +1656,12 @@
                             <span class="exp-company">University of Ruhuna</span>
                             <span class="exp-dates">Nov 2016 — Dec 2021</span>
                         </div>
-                        <div class="exp-role">Bachelor of Science in Engineering (Hons) — Electrical &amp; Information Engineering</div>
+                        <div class="exp-role">Bachelor of Science in Engineering (Hons) — Electrical &amp; Information
+                            Engineering</div>
                         <div class="exp-location">Galle, Sri Lanka</div>
                         <ul class="exp-bullets">
-                            <li>Graduated from the Faculty of Engineering with comprehensive specialization in software engineering, digital systems, algorithms, and network computing.</li>
+                            <li>Graduated from the Faculty of Engineering with comprehensive specialization in software
+                                engineering, digital systems, algorithms, and network computing.</li>
                         </ul>
                     </div>
 
@@ -1328,34 +1671,76 @@
                 <div class="shipped-section">
                     <div class="shipped-header">WORK THAT SHIPPED</div>
 
-                    <!-- Shipped Card 1: PayMedia -->
+                    <!-- Shipped Card 1: OneApp -->
                     <div class="shipped-card">
                         <div class="shipped-company">PAYMEDIA</div>
-                        <div class="shipped-title">Fintech Payment Platforms &amp; BFF Architecture</div>
-                        <div class="shipped-description">High-volume financial transaction processing engine featuring a Backend-for-Frontend (BFF) layer with WSO2 API Manager (+20% routing efficiency), ISO 20022 compliance rules, and optimized PostgreSQL stored procedures reducing execution time by ~30%.</div>
+                        <div class="shipped-title">OneApp — ComBank Maldives Digital Banking</div>
+                        <div class="shipped-description">Backend engineering for a digital banking app covering
+                            financial transaction processing, banking API integrations, and scalable backend services.
+                        </div>
                         <div class="shipped-tags">
                             <span class="shipped-tag">Java</span>
                             <span class="shipped-tag">Spring Boot</span>
+                            <span class="shipped-tag">REST APIs</span>
+                            <span class="shipped-tag">SOAP</span>
                             <span class="shipped-tag">WSO2 API Manager</span>
                             <span class="shipped-tag">PostgreSQL</span>
                             <span class="shipped-tag">ISO 20022</span>
-                            <span class="shipped-tag">REST &amp; SOAP</span>
                         </div>
                     </div>
 
-                    <!-- Shipped Card 2: Climate Smart Initiatives -->
+                    <!-- Shipped Card 2: DhiraaguPay -->
+                    <div class="shipped-card">
+                        <div class="shipped-company">PAYMEDIA</div>
+                        <div class="shipped-title">DhiraaguPay — Digital Wallet</div>
+                        <div class="shipped-description">Backend for a digital wallet supporting money transfers,
+                            merchant payments, cash transactions, and mobile top-ups via REST &amp; SOAP payment
+                            integrations.</div>
+                        <div class="shipped-tags">
+                            <span class="shipped-tag">Java</span>
+                            <span class="shipped-tag">Spring Boot</span>
+                            <span class="shipped-tag">REST APIs</span>
+                            <span class="shipped-tag">SOAP</span>
+                            <span class="shipped-tag">PostgreSQL</span>
+                            <span class="shipped-tag">Payment Systems</span>
+                        </div>
+                        <a href="https://www.dhiraagu.com.mv/personal/lifestyle/dhiraagupay" target="_blank"
+                            rel="noopener noreferrer" class="shipped-link">View Product <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Shipped Card 3: Smart Carbon Calculator V2 -->
                     <div class="shipped-card">
                         <div class="shipped-company">CLIMATE SMART INITIATIVES</div>
-                        <div class="shipped-title">Smart Carbon Calculator V2 &amp; TraCAD</div>
-                        <div class="shipped-description">Microservices-based greenhouse gas (GHG) assessment tool and carbon emission calculation and reporting platform built according to international UNFCCC, JICA, and ICAT standards with 98–99% system availability.</div>
+                        <div class="shipped-title">Smart Carbon Calculator V2</div>
+                        <div class="shipped-description">Fullstack engineering for a carbon accounting platform supporting emission calculation, verification, and GHG reporting workflows.</div>
                         <div class="shipped-tags">
+                            <span class="shipped-tag">Java</span>
+                            <span class="shipped-tag">Spring Boot</span>
+                            <span class="shipped-tag">Angular</span>
+                            <span class="shipped-tag">MySQL</span>
+                            <span class="shipped-tag">Jakarta EE</span>
+                            <span class="shipped-tag">REST APIs</span>
+                        </div>
+                        <a href="https://scc.climatesi.com/" target="_blank" rel="noopener noreferrer"
+                            class="shipped-link">Visit SCC <i class="fas fa-arrow-right"></i></a>
+                    </div>
+
+                    <!-- Shipped Card 4: TraCAD -->
+                    <div class="shipped-card">
+                        <div class="shipped-company">CLIMATE SMART INITIATIVES</div>
+                        <div class="shipped-title">TraCAD — Transport Climate Action Data Tool</div>
+                        <div class="shipped-description">Fullstack engineering for a web-based tool helping countries assess climate actions in transport — covering GHG impact, marginal abatement cost analysis, and tracking using international methodologies.</div>
+                        <div class="shipped-tags">
+                            <span class="shipped-tag">Java</span>
                             <span class="shipped-tag">Spring Boot</span>
                             <span class="shipped-tag">NestJS</span>
                             <span class="shipped-tag">Angular</span>
                             <span class="shipped-tag">Microservices</span>
-                            <span class="shipped-tag">UNFCCC</span>
-                            <span class="shipped-tag">Jakarta EE</span>
+                            <span class="shipped-tag">MySQL</span>
                         </div>
+                        <a href="https://tracad.unops.org/landing-page" target="_blank" rel="noopener noreferrer"
+                            class="shipped-link">Visit TraCAD <i class="fas fa-arrow-right"></i></a>
                     </div>
 
                 </div>
@@ -1368,12 +1753,14 @@
     <section class="connect-section">
         <div class="container">
             <div class="section-heading">
-                <h2>Connect with Me</h2>
-                <p style="color: #6e7681; font-size: 0.95rem; margin-top: 0.4rem;">Find me across the web</p>
+                <div class="section-eyebrow"><span>Connect</span></div>
+                <h2>Find me across the web</h2>
+                <p>Whether it's collaboration, a chat about tech, or just saying hi — I'm always around.</p>
             </div>
             <div class="connect-grid">
 
-                <a href="https://www.linkedin.com/in/pasindu-jayasinghe/" target="_blank" rel="noopener noreferrer" class="connect-card" id="connect-linkedin">
+                <a href="https://www.linkedin.com/in/pasindu-jayasinghe/" target="_blank" rel="noopener noreferrer"
+                    class="connect-card" id="connect-linkedin">
                     <div class="connect-icon">
                         <img src="images/linkedin.png" alt="LinkedIn">
                     </div>
@@ -1383,7 +1770,8 @@
                     </span>
                 </a>
 
-                <a href="https://github.com/pasindu-jayasinghe" target="_blank" rel="noopener noreferrer" class="connect-card" id="connect-github">
+                <a href="https://github.com/pasindu-jayasinghe" target="_blank" rel="noopener noreferrer"
+                    class="connect-card" id="connect-github">
                     <div class="connect-icon">
                         <img src="images/github-logo.png" alt="GitHub">
                     </div>
@@ -1393,7 +1781,8 @@
                     </span>
                 </a>
 
-                <a href="https://medium.com/@pasindu-jayasinghe" target="_blank" rel="noopener noreferrer" class="connect-card" id="connect-medium">
+                <a href="https://medium.com/@pasindu-jayasinghe" target="_blank" rel="noopener noreferrer"
+                    class="connect-card" id="connect-medium">
                     <div class="connect-icon" style="font-size:18px; color:#fff;">
                         <i class="fab fa-medium"></i>
                     </div>
@@ -1403,7 +1792,8 @@
                     </span>
                 </a>
 
-                <a href="https://stackoverflow.com/users/6477792/pasindu-jayasinghe" target="_blank" rel="noopener noreferrer" class="connect-card" id="connect-stackoverflow">
+                <a href="https://stackoverflow.com/users/6477792/pasindu-jayasinghe" target="_blank"
+                    rel="noopener noreferrer" class="connect-card" id="connect-stackoverflow">
                     <div class="connect-icon">
                         <img src="images/stackoverflow.png" alt="Stack Overflow">
                     </div>
@@ -1413,7 +1803,8 @@
                     </span>
                 </a>
 
-                <a href="https://twitter.com/pasindu_jaya" target="_blank" rel="noopener noreferrer" class="connect-card" id="connect-twitter">
+                <a href="https://twitter.com/pasindu_jaya" target="_blank" rel="noopener noreferrer"
+                    class="connect-card" id="connect-twitter">
                     <div class="connect-icon">
                         <img src="images/twitter.png" alt="Twitter / X">
                     </div>
@@ -1423,7 +1814,8 @@
                     </span>
                 </a>
 
-                <a href="https://pasicode.blogspot.com" target="_blank" rel="noopener noreferrer" class="connect-card" id="connect-blog">
+                <a href="https://pasicode.blogspot.com" target="_blank" rel="noopener noreferrer" class="connect-card"
+                    id="connect-blog">
                     <div class="connect-icon">
                         <img src="images/pasicode.png" alt="Blog">
                     </div>
@@ -1433,7 +1825,8 @@
                     </span>
                 </a>
 
-                <a href="https://dev.to/pasindu_jayasinghe_04c7e4" target="_blank" rel="noopener noreferrer" class="connect-card" id="connect-devto">
+                <a href="https://dev.to/pasindu_jayasinghe_04c7e4" target="_blank" rel="noopener noreferrer"
+                    class="connect-card" id="connect-devto">
                     <div class="connect-icon" style="font-size:18px; color:#fff;">
                         <i class="fab fa-dev"></i>
                     </div>
@@ -1452,7 +1845,9 @@
     <section class="tech-section">
         <div class="container">
             <div class="section-heading">
+                <div class="section-eyebrow"><span>Tech Stack</span></div>
                 <h2>&lt;Tech Experience/&gt;</h2>
+                <p>The tools and technologies I use to build reliable, scalable software.</p>
             </div>
             <div class="tech-grid">
                 <div class="tech-item">
@@ -1470,119 +1865,132 @@
             </div>
         </div>
     </section>
-<!-- Medium Articles -->
-<span id="articles"></span>
-<section class="medium-section">
-    <div class="container">
-        <div class="section-heading">
-            <h2>Medium Articles ✍️</h2>
-            <p>Sharing my thoughts on software engineering, fintech, and system design.</p>
+    <!-- Medium Articles -->
+    <span id="articles"></span>
+    <section class="medium-section">
+        <div class="container">
+            <div class="section-heading">
+                <div class="section-eyebrow"><span>Writing</span></div>
+                <h2>Medium Articles ✍️</h2>
+                <p>Sharing my thoughts on software engineering, fintech, and system design.</p>
+            </div>
+
+            <div class="medium-grid">
+
+                <!-- Card 1 -->
+                <a href="https://medium.com/@pasindu-jayasinghe/ai-finance-assistant-with-spring-boot-and-mcp-heres-the-one-decision-that-actually-mattered-04e621cf2e83"
+                    target="_blank" rel="noopener noreferrer" class="medium-card">
+                    <div class="medium-card-image">
+                        <img src="images/ai-finance-assistant.png"
+                            alt="AI Finance Assistant with Spring Boot and MCP Architecture">
+                    </div>
+                    <div class="medium-card-body">
+                        <div>
+                            <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
+                            <h3>AI Finance Assistant With Spring Boot and MCP</h3>
+                            <p>Why a two-step propose-then-confirm pattern is the critical architectural decision
+                                between a toy demo and a trusted financial system.</p>
+                        </div>
+                        <div class="medium-card-footer">
+                            <span>Read Article <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="https://medium.com/@pasindu-jayasinghe/6-design-patterns-that-made-my-payment-service-actually-maintainable-c3d653c79db2"
+                    target="_blank" rel="noopener noreferrer" class="medium-card">
+                    <div class="medium-card-image cover">
+                        <img src="images/payment-design-patterns.jpg" alt="Payment Service Design Patterns">
+                    </div>
+                    <div class="medium-card-body">
+                        <div>
+                            <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
+                            <h3>6 Design Patterns That Made My Payment Service Maintainable</h3>
+                            <p>Real-world design patterns that improved maintainability and clarity in a fintech payment
+                                system.</p>
+                        </div>
+                        <div class="medium-card-footer">
+                            <span>Read Article <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="https://medium.com/@pasindu-jayasinghe/zero-trust-internal-api-on-aws-d7a4a0a531e3"
+                    target="_blank" rel="noopener noreferrer" class="medium-card">
+                    <div class="medium-card-image">
+                        <img src="images/zero-trust-internal-api.png" alt="Building a Zero Trust Internal API on AWS">
+                    </div>
+                    <div class="medium-card-body">
+                        <div>
+                            <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
+                            <h3>Building a Zero Trust Internal API on AWS</h3>
+                            <p>A walkthrough of securing internal microservices using EC2, IAM, API Gateway, Lambda, and
+                                DynamoDB.</p>
+                        </div>
+                        <div class="medium-card-footer">
+                            <span>Read Article <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="https://medium.com/@pasindu-jayasinghe/deploying-a-spring-boot-application-to-aws-ecs-fargate-using-codepipeline-a-complete-ci-cd-bba17633d871"
+                    target="_blank" rel="noopener noreferrer" class="medium-card">
+                    <div class="medium-card-image">
+                        <img src="images/spring-boot-ecs-fargate.png"
+                            alt="Deploying a Spring Boot Application to AWS ECS Fargate Using CodePipeline">
+                    </div>
+                    <div class="medium-card-body">
+                        <div>
+                            <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
+                            <h3>Deploying a Spring Boot App to AWS ECS Fargate via CodePipeline</h3>
+                            <p>How I automated Spring Boot deployments using GitHub, AWS CodePipeline, CodeBuild, ECR,
+                                and ECS Fargate.</p>
+                        </div>
+                        <div class="medium-card-footer">
+                            <span>Read Article <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Card 5 -->
+                <a href="https://medium.com/@pasindu-jayasinghe/i-built-a-full-stack-saas-app-entirely-with-ai-d9372cbf7b03"
+                    target="_blank" rel="noopener noreferrer" class="medium-card">
+                    <div class="medium-card-image cover">
+                        <img src="images/fullstack-saas-ai.png" alt="I Built a Full-Stack SaaS App Entirely with AI">
+                    </div>
+                    <div class="medium-card-body">
+                        <div>
+                            <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
+                            <h3>I Built a Full-Stack SaaS App Entirely with AI</h3>
+                            <p>The architecture, the development process, and what actually happened building an
+                                end-to-end SaaS product.</p>
+                        </div>
+                        <div class="medium-card-footer">
+                            <span>Read Article <i class="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
         </div>
-
-        <div class="medium-grid">
-
-            <!-- Card 1 -->
-            <a href="https://medium.com/@pasindu-jayasinghe/ai-finance-assistant-with-spring-boot-and-mcp-heres-the-one-decision-that-actually-mattered-04e621cf2e83" target="_blank" rel="noopener noreferrer" class="medium-card">
-                <div class="medium-card-image">
-                    <img src="images/ai-finance-assistant.png" alt="AI Finance Assistant with Spring Boot and MCP Architecture">
-                </div>
-                <div class="medium-card-body">
-                    <div>
-                        <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
-                        <h3>AI Finance Assistant With Spring Boot and MCP</h3>
-                        <p>Why a two-step propose-then-confirm pattern is the critical architectural decision between a toy demo and a trusted financial system.</p>
-                    </div>
-                    <div class="medium-card-footer">
-                        <span>Read Article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 2 -->
-            <a href="https://medium.com/@pasindu-jayasinghe/6-design-patterns-that-made-my-payment-service-actually-maintainable-c3d653c79db2" target="_blank" rel="noopener noreferrer" class="medium-card">
-                <div class="medium-card-image cover">
-                    <img src="images/payment-design-patterns.jpg" alt="Payment Service Design Patterns">
-                </div>
-                <div class="medium-card-body">
-                    <div>
-                        <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
-                        <h3>6 Design Patterns That Made My Payment Service Maintainable</h3>
-                        <p>Real-world design patterns that improved maintainability and clarity in a fintech payment system.</p>
-                    </div>
-                    <div class="medium-card-footer">
-                        <span>Read Article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 3 -->
-            <a href="https://medium.com/@pasindu-jayasinghe/zero-trust-internal-api-on-aws-d7a4a0a531e3" target="_blank" rel="noopener noreferrer" class="medium-card">
-                <div class="medium-card-image">
-                    <img src="images/zero-trust-internal-api.png" alt="Building a Zero Trust Internal API on AWS">
-                </div>
-                <div class="medium-card-body">
-                    <div>
-                        <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
-                        <h3>Building a Zero Trust Internal API on AWS</h3>
-                        <p>A walkthrough of securing internal microservices using EC2, IAM, API Gateway, Lambda, and DynamoDB.</p>
-                    </div>
-                    <div class="medium-card-footer">
-                        <span>Read Article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 4 -->
-            <a href="https://medium.com/@pasindu-jayasinghe/deploying-a-spring-boot-application-to-aws-ecs-fargate-using-codepipeline-a-complete-ci-cd-bba17633d871" target="_blank" rel="noopener noreferrer" class="medium-card">
-                <div class="medium-card-image">
-                    <img src="images/spring-boot-ecs-fargate.png" alt="Deploying a Spring Boot Application to AWS ECS Fargate Using CodePipeline">
-                </div>
-                <div class="medium-card-body">
-                    <div>
-                        <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
-                        <h3>Deploying a Spring Boot App to AWS ECS Fargate via CodePipeline</h3>
-                        <p>How I automated Spring Boot deployments using GitHub, AWS CodePipeline, CodeBuild, ECR, and ECS Fargate.</p>
-                    </div>
-                    <div class="medium-card-footer">
-                        <span>Read Article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Card 5 -->
-            <a href="https://medium.com/@pasindu-jayasinghe/i-built-a-full-stack-saas-app-entirely-with-ai-d9372cbf7b03" target="_blank" rel="noopener noreferrer" class="medium-card">
-                <div class="medium-card-image cover">
-                    <img src="images/fullstack-saas-ai.png" alt="I Built a Full-Stack SaaS App Entirely with AI">
-                </div>
-                <div class="medium-card-body">
-                    <div>
-                        <div class="medium-card-domain"><i class="fab fa-medium"></i> MEDIUM.COM</div>
-                        <h3>I Built a Full-Stack SaaS App Entirely with AI</h3>
-                        <p>The architecture, the development process, and what actually happened building an end-to-end SaaS product.</p>
-                    </div>
-                    <div class="medium-card-footer">
-                        <span>Read Article <i class="fas fa-arrow-right"></i></span>
-                    </div>
-                </div>
-            </a>
-
-        </div>
-    </div>
-</section>
+    </section>
     <!-- CTA -->
     <span id="hire"></span>
     <section class="cta-section">
         <div class="container">
             <h2>Hire Me!</h2>
             <p>Feel free to connect with me to discuss potential collaborations. I look forward to hearing from you!</p>
-            <a href="#" class="btn">Contact Me</a>
+            <a href="#connect" class="btn">Contact Me</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 pasiCode. All Rights Reserved.<br>Designed by Pasindu Jayasinghe</p>
+            <p>&copy; 2026 pasiCode. All Rights Reserved.<br>Designed by Pasindu Jayasinghe</p>
         </div>
     </footer>
 
@@ -1652,4 +2060,5 @@
         });
     </script>
 </body>
+
 </html>
