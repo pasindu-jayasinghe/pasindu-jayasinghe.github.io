@@ -23,8 +23,9 @@
             --primary: #6366f1;
             --primary-dark: #4f46e5;
             --secondary: #8b5cf6;
-            --accent: #ec4899;
-            --dark: #0f172a;
+            --accent: #818cf8;
+            --dark: #0b0f1a;
+            --dark-mid: #0f172a;
             --dark-light: #1e293b;
             --gray: #64748b;
             --light: #f1f5f9;
@@ -39,10 +40,28 @@
             background: var(--dark);
         }
 
+        /* ─── UNIFIED COLOR SYSTEM ───
+           Primary accent : #6366f1 (indigo)
+           Secondary accent: #8b5cf6 (violet)
+           Highlight text : #a78bfa (lavender)
+           Muted text     : #94a3b8
+           Dim text       : #64748b
+           BG dark        : #0b0f1a
+           BG mid         : #0f172a
+           BG card        : #131929
+           Border         : rgba(99,102,241,0.18)
+        */
+
         /* ─── HERO SECTION ─── */
         .header {
             min-height: 100vh;
-            background: #0a1220;
+            background:
+                /* Grid lines */
+                linear-gradient(rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.08) 1px, transparent 1px),
+                /* Base */
+                #0b0f1a;
+            background-size: 48px 48px, 48px 48px, 100% 100%;
             position: relative;
             display: flex;
             align-items: center;
@@ -50,10 +69,88 @@
             overflow: hidden;
         }
 
-        .header::before,
-        .header::after,
-        .hero-grid-bg {
-            display: none;
+        /* Top-right indigo glow */
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -100px;
+            width: 750px;
+            height: 750px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.04) 40%, transparent 65%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Bottom-left violet glow */
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -120px;
+            left: -100px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.03) 40%, transparent 60%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Animated ambient gradient overlay */
+        .hero-ambient {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(99, 102, 241, 0.08), transparent 60%),
+                        radial-gradient(ellipse 60% 80% at 25% 70%, rgba(139, 92, 246, 0.06), transparent 55%);
+            animation: ambientShift 8s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes ambientShift {
+            0% { opacity: 0.5; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.08); }
+        }
+
+        /* Floating geometric rings */
+        .hero-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(99, 102, 241, 0.12);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-ring-1 {
+            width: 300px;
+            height: 300px;
+            top: 8%;
+            right: 5%;
+            animation: ringFloat 20s linear infinite;
+        }
+
+        .hero-ring-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 12%;
+            left: 8%;
+            border-color: rgba(139, 92, 246, 0.1);
+            animation: ringFloat 15s linear infinite reverse;
+        }
+
+        @keyframes ringFloat {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Grid fade — stronger at edges, transparent at centre */
+        .hero-grid-fade {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(11, 15, 26, 0.85) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .header-content {
@@ -141,20 +238,20 @@
             width: 42px;
             height: 42px;
             border-radius: 8px;
-            background: #0f1930;
+            background: rgba(99, 102, 241, 0.08);
             display: flex;
             align-items: center;
             justify-content: center;
             color: #8b9bb4;
             font-size: 1rem;
             transition: all 0.2s ease;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.18);
             text-decoration: none;
         }
 
         .social-icons a:hover {
-            background: #162445;
-            border-color: rgba(255, 255, 255, 0.2);
+            background: rgba(99, 102, 241, 0.18);
+            border-color: rgba(99, 102, 241, 0.45);
             color: #ffffff;
             transform: translateY(-2px);
         }
@@ -189,16 +286,16 @@
             font-size: 0.8rem;
             font-weight: 500;
             color: #94a3b8;
-            background: #0f1930;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(99, 102, 241, 0.08);
+            border: 1px solid rgba(99, 102, 241, 0.18);
             padding: 0.35rem 0.95rem;
             border-radius: 50px;
             transition: all 0.2s ease;
         }
 
         .hero-interest-pill:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            color: #ffffff;
+            border-color: rgba(99, 102, 241, 0.45);
+            color: #a5b4fc;
         }
 
         /* ── RIGHT: Content ── */
@@ -278,18 +375,18 @@
         .hero-tag {
             font-size: 0.82rem;
             font-weight: 500;
-            color: #5c8aff;
-            background: rgba(47, 82, 168, 0.14);
-            border: 1.5px solid #2f52a8;
+            color: #818cf8;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1.5px solid rgba(99, 102, 241, 0.3);
             padding: 0.35rem 0.95rem;
             border-radius: 50px;
             transition: all 0.2s ease;
         }
 
         .hero-tag:hover {
-            border-color: #5c8aff;
-            background: rgba(47, 82, 168, 0.28);
-            color: #93c5fd;
+            border-color: rgba(99, 102, 241, 0.65);
+            background: rgba(99, 102, 241, 0.2);
+            color: #a5b4fc;
             transform: translateY(-1px);
         }
 
@@ -306,21 +403,21 @@
             align-items: center;
             justify-content: center;
             padding: 0.75rem 1.65rem;
-            background: #5078f8;
+            background: #6366f1;
             color: #ffffff;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.2s ease;
-            box-shadow: 0 4px 14px rgba(80, 120, 248, 0.3);
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
             border: none;
         }
 
         .btn-hero-primary:hover {
-            background: #4168e8;
+            background: #4f46e5;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(80, 120, 248, 0.45);
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
         }
 
         .btn-hero-secondary {
@@ -328,19 +425,19 @@
             align-items: center;
             justify-content: center;
             padding: 0.75rem 1.65rem;
-            background: #0b1222;
+            background: rgba(99, 102, 241, 0.08);
             color: #ffffff;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             font-size: 0.95rem;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(99, 102, 241, 0.25);
             transition: all 0.2s ease;
         }
 
         .btn-hero-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.5);
             transform: translateY(-2px);
         }
 
@@ -373,7 +470,7 @@
         /* About Section */
         .about {
             padding: 7rem 2rem;
-            background: #0d1117;
+            background: #0f172a;
             position: relative;
             overflow: hidden;
         }
@@ -384,8 +481,8 @@
             position: absolute;
             inset: 0;
             background-image:
-                linear-gradient(rgba(124, 58, 237, 0.04) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(124, 58, 237, 0.04) 1px, transparent 1px);
+                linear-gradient(rgba(99, 102, 241, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(99, 102, 241, 0.04) 1px, transparent 1px);
             background-size: 60px 60px;
             pointer-events: none;
         }
@@ -410,7 +507,7 @@
         }
 
         .about-bio .about-name .name-highlight {
-            background: linear-gradient(135deg, #a78bfa, #ec4899);
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -419,7 +516,7 @@
         .about-bio .about-role {
             font-size: 0.95rem;
             font-weight: 600;
-            color: #a78bfa;
+            color: #818cf8;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             margin-bottom: 1.1rem;
@@ -442,9 +539,9 @@
             display: inline-block;
             padding: 0.3rem 0.85rem;
             border-radius: 999px;
-            background: rgba(167, 139, 250, 0.1);
-            border: 1px solid rgba(167, 139, 250, 0.25);
-            color: #a78bfa;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.28);
+            color: #818cf8;
             font-size: 0.8rem;
             font-weight: 600;
             letter-spacing: 0.03em;
@@ -452,8 +549,8 @@
 
         /* Right: card */
         .about-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(167, 139, 250, 0.18);
+            background: rgba(99, 102, 241, 0.04);
+            border: 1px solid rgba(99, 102, 241, 0.18);
             border-radius: 20px;
             padding: 2.8rem 2.2rem 2.5rem;
             backdrop-filter: blur(10px);
@@ -469,7 +566,7 @@
             left: -60px;
             width: 200px;
             height: 200px;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.15), transparent 70%);
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 70%);
             pointer-events: none;
         }
 
@@ -483,17 +580,109 @@
         }
 
         .about-card .card-headline .arrow {
-            background: linear-gradient(135deg, #a78bfa, #ec4899);
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .about-card .card-sub {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: #64748b;
             line-height: 1.65;
-            margin-bottom: 2.5rem;
+            margin-bottom: 0;
+        }
+
+        /* Quote block */
+        .about-quote-icon {
+            font-size: 1.6rem;
+            color: #6366f1;
+            opacity: 0.6;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .about-quote {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.05rem, 2vw, 1.3rem);
+            font-weight: 600;
+            color: #e2e8f0;
+            line-height: 1.45;
+            border-left: 3px solid #6366f1;
+            padding-left: 1.1rem;
+            margin: 0 0 1.5rem 0;
+            font-style: italic;
+        }
+
+        /* Focus pillars grid */
+        .about-focus-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .about-focus-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(99, 102, 241, 0.07);
+            border: 1px solid rgba(99, 102, 241, 0.18);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .about-focus-item:hover {
+            background: rgba(99, 102, 241, 0.14);
+            border-color: rgba(99, 102, 241, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .about-focus-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            background: rgba(99, 102, 241, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #818cf8;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .about-focus-label {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #94a3b8;
+            line-height: 1.35;
+            letter-spacing: 0.01em;
+        }
+
+        /* Divider between focus grid and process flow */
+        .about-flow-divider {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 1.75rem 0 1.5rem;
+        }
+
+        .about-flow-divider::before,
+        .about-flow-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        .about-flow-divider span {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #64748b;
+            white-space: nowrap;
         }
 
         /* Process flow inside card */
@@ -516,23 +705,23 @@
             height: 72px;
             border-radius: 50%;
             background: #0b0f1a;
-            border: 2px solid rgba(167, 139, 250, 0.3);
+            border: 2px solid rgba(99, 102, 241, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.3rem;
-            color: #a78bfa;
+            color: #818cf8;
             transition: all 0.35s ease;
             position: relative;
-            box-shadow: 0 0 0 6px rgba(124, 58, 237, 0.06);
+            box-shadow: 0 0 0 6px rgba(99, 102, 241, 0.06);
         }
 
         .process-icon:hover {
-            border-color: #a78bfa;
-            background: #130d2a;
-            box-shadow: 0 0 0 8px rgba(124, 58, 237, 0.1), 0 0 24px rgba(167, 139, 250, 0.35);
+            border-color: #818cf8;
+            background: #0d1128;
+            box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.12), 0 0 24px rgba(99, 102, 241, 0.3);
             transform: translateY(-5px);
-            color: #c4b5fd;
+            color: #a5b4fc;
         }
 
         .process-label {
@@ -548,7 +737,7 @@
         .process-connector {
             flex: 1;
             height: 1px;
-            background: linear-gradient(90deg, rgba(167, 139, 250, 0.5), rgba(236, 72, 153, 0.5));
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.5), rgba(139, 92, 246, 0.5));
             position: relative;
             top: -1.5rem;
             flex-shrink: 1;
@@ -597,7 +786,7 @@
             display: inline-block;
             width: 2rem;
             height: 2px;
-            background: #7c3aed;
+            background: #6366f1;
             flex-shrink: 0;
         }
 
@@ -607,7 +796,7 @@
             font-weight: 700;
             letter-spacing: 0.18em;
             text-transform: uppercase;
-            color: #a78bfa;
+            color: #818cf8;
         }
 
         .section-heading h2 {
@@ -629,7 +818,7 @@
         /* ─── Experience & Education Two-Column Layout ─── */
         .timeline-section {
             padding: 6rem 2rem;
-            background: #0b0f19;
+            background: #0b0f1a;
             position: relative;
         }
 
@@ -891,7 +1080,7 @@
         /* Connect Section */
         .connect-section {
             padding: 5rem 2rem;
-            background: #0d1117;
+            background: #0f172a;
         }
 
         /* Compact row of social boxes */
@@ -907,12 +1096,12 @@
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            background: #161b22;
-            border: 1px solid #21262d;
+            background: rgba(99, 102, 241, 0.06);
+            border: 1px solid rgba(99, 102, 241, 0.18);
             border-radius: 10px;
             padding: 0.6rem 1.1rem;
             text-decoration: none;
-            color: #c9d1d9;
+            color: #cbd5e1;
             font-size: 0.875rem;
             font-weight: 500;
             transition: all 0.2s ease;
@@ -920,11 +1109,11 @@
         }
 
         .connect-card:hover {
-            background: #1c2128;
-            border-color: #6366f1;
+            background: rgba(99, 102, 241, 0.14);
+            border-color: rgba(99, 102, 241, 0.5);
             color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
         }
 
         .connect-icon {
@@ -948,7 +1137,7 @@
 
         .connect-card .connect-sub {
             font-size: 0.72rem;
-            color: #6e7681;
+            color: #64748b;
             display: block;
             margin-top: 1px;
         }
@@ -960,7 +1149,7 @@
         /* Tech Section */
         .tech-section {
             padding: 6rem 2rem;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            background: #0b0f1a;
             color: var(--white);
         }
 
@@ -978,15 +1167,17 @@
         .tech-item {
             text-align: center;
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(99, 102, 241, 0.06);
             border-radius: 16px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.18);
         }
 
         .tech-item:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(99, 102, 241, 0.14);
+            border-color: rgba(99, 102, 241, 0.4);
             transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
         }
 
         .tech-item img {
@@ -999,9 +1190,21 @@
         /* CTA Section */
         .cta-section {
             padding: 8rem 2rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #3730a3 0%, #4f46e5 50%, #6366f1 100%);
             text-align: center;
             color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(139, 92, 246, 0.25) 0%, transparent 60%);
+            pointer-events: none;
         }
 
         .cta-section h2 {
@@ -1036,9 +1239,10 @@
         /* Footer */
         footer {
             padding: 3rem 2rem;
-            background: var(--dark);
+            background: #0b0f1a;
             color: var(--white);
             text-align: center;
+            border-top: 1px solid rgba(99, 102, 241, 0.15);
         }
 
         footer p {
@@ -1063,6 +1267,7 @@
         .medium-section {
             padding: 6rem 2rem;
             background: #0f172a;
+            position: relative;
         }
 
         .medium-grid {
@@ -1074,9 +1279,9 @@
         }
 
         .medium-card {
-            background: #1e293b;
+            background: rgba(99, 102, 241, 0.05);
             border-radius: 14px;
-            border: 1px solid #334155;
+            border: 1px solid rgba(99, 102, 241, 0.18);
             text-decoration: none;
             color: inherit;
             transition: all 0.25s ease;
@@ -1088,8 +1293,8 @@
 
         .medium-card:hover {
             transform: translateY(-5px);
-            border-color: #6366f1;
-            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.2);
+            border-color: rgba(99, 102, 241, 0.5);
+            box-shadow: 0 12px 28px rgba(99, 102, 241, 0.22);
         }
 
         .medium-card-image {
@@ -1118,11 +1323,11 @@
         }
 
         .medium-card-image.placeholder {
-            background: linear-gradient(135deg, #1e293b, #0f172a);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.12), rgba(139, 92, 246, 0.08));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #6366f1;
+            color: #818cf8;
             font-size: 2.2rem;
         }
 
@@ -1151,7 +1356,7 @@
         }
 
         .medium-card-domain i {
-            color: #a78bfa;
+            color: #818cf8;
         }
 
         .medium-card h3 {
@@ -1188,7 +1393,7 @@
         }
 
         .medium-card-footer span {
-            color: #a78bfa;
+            color: #818cf8;
             font-weight: 600;
             font-size: 0.82rem;
             display: inline-flex;
@@ -1199,7 +1404,7 @@
 
         .medium-card:hover .medium-card-footer span {
             gap: 0.55rem;
-            color: #c084fc;
+            color: #a5b4fc;
         }
 
         /* ─── TOP NAV BAR ─── */
@@ -1230,7 +1435,7 @@
             font-family: 'Space Grotesk', sans-serif;
             font-size: 1.25rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #a78bfa, #ec4899);
+            background: linear-gradient(135deg, #818cf8, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -1263,7 +1468,7 @@
         }
 
         .nav-links .nav-cta a {
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            background: #6366f1;
             color: #fff;
             padding: 0.45rem 1.1rem;
             border-radius: 50px;
@@ -1271,9 +1476,9 @@
         }
 
         .nav-links .nav-cta a:hover {
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            background: #4f46e5;
             transform: translateY(-1px);
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.45);
         }
 
         /* Hamburger */
@@ -1355,7 +1560,7 @@
 
         .nav-mobile-drawer .mobile-cta {
             margin-top: 0.5rem;
-            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            background: #6366f1;
             color: #fff !important;
             text-align: center;
             border-radius: 50px;
@@ -1410,11 +1615,15 @@
         <a href="#connect" id="mob-connect">Connect</a>
         <a href="#tech" id="mob-tech">Tech</a>
         <a href="#articles" id="mob-articles">Articles</a>
-        <a href="#hire" class="mobile-cta" id="mob-hire">Hire Me 🚀</a>
+        <a href="#hire" class="mobile-cta" id="mob-hire">Hire Me <i class="fas fa-arrow-right" style="font-size:0.8em;"></i></a>
     </div>
 
     <!-- Hero -->
     <section class="header" id="hero">
+        <div class="hero-ambient"></div>
+        <div class="hero-grid-fade"></div>
+        <div class="hero-ring hero-ring-1"></div>
+        <div class="hero-ring hero-ring-2"></div>
         <div class="header-content">
 
             <!-- Left: Profile Photo & Details -->
@@ -1445,11 +1654,11 @@
 
                 <h1>Pasindu Jayasinghe</h1>
 
-                <p class="hero-bio">Software Engineer &amp; Backend Engineer based in Melbourne, Australia. Over 3 years of experience engineering scalable backend platforms across fintech and sustainability technology, with a strong focus on Java, Spring Boot, microservices, and cloud infrastructure.</p>
+                <p class="hero-bio">Software Engineer &amp; Backend Developer with 4+ years of experience building scalable systems across fintech, digital banking, and distributed platforms — now bridging Backend Engineering with Cloud &amp; AI.</p>
 
                 <div class="hero-stats">
                     <div class="hero-stat">
-                        <span class="hero-stat-num">3+</span>
+                        <span class="hero-stat-num">4+</span>
                         <span class="hero-stat-label">Years Experience</span>
                     </div>
                     <div class="hero-stat-divider"></div>
@@ -1468,10 +1677,11 @@
                     <span class="hero-tag">Java</span>
                     <span class="hero-tag">Spring Boot</span>
                     <span class="hero-tag">Microservices</span>
-                    <span class="hero-tag">REST APIs</span>
-                    <span class="hero-tag">AWS</span>
                     <span class="hero-tag">Kubernetes</span>
-                    <span class="hero-tag">Distributed Systems</span>
+                    <span class="hero-tag">Docker</span>
+                    <span class="hero-tag">Redis</span>
+                    <span class="hero-tag">AWS</span>
+                    <span class="hero-tag">Generative AI</span>
                 </div>
 
                 <div class="hero-actions">
@@ -1495,66 +1705,89 @@
                         <span>About Me</span>
                     </div>
                     <h2 class="about-name">Hi, I'm <span class="name-highlight">Pasindu</span> <span style="font-weight:400; font-size:0.75em; color:#94a3b8;">(Pasi)</span></h2>
-                    <p class="about-role">Software &amp; Backend Engineer &bull; Melbourne, Australia</p>
+                    <p class="about-role">Software Engineer &amp; Backend Developer &bull; Melbourne, Australia</p>
                     <p class="about-desc">
-                        With 3+ years of experience across fintech and sustainability tech, I specialize in building scalable backend systems—from digital banking and digital wallets to carbon footprint management platforms.
+                        I'm a <strong style="color:#e2e8f0;">Software Engineer and Backend Developer</strong> with <strong style="color:#e2e8f0;">4+ years of experience</strong> building scalable software solutions, with a strong focus on <strong style="color:#e2e8f0;">fintech, digital banking, and distributed systems</strong>.
                     </p>
                     <p class="about-desc">
-                        I primarily work with Java, Spring Boot, microservices, AWS, and Kubernetes, while exploring practical AI integrations like RAG, AI agents, and MCP to build production-ready solutions.
+                        My engineering journey has taken me from backend applications to real-world <strong style="color:#e2e8f0;">digital banking and payment platforms</strong>, where reliability, security, scalability, and performance matter. I specialize in <strong style="color:#e2e8f0;">Java, Spring Boot, Microservices, REST APIs, Kubernetes, Docker, Redis, and cloud technologies</strong>.
+                    </p>
+                    <p class="about-desc">
+                        Now, I'm combining my backend experience with <strong style="color:#e2e8f0;">Cloud Computing and AI</strong> — exploring Generative AI, Agentic AI, RAG, MCP, and LLM-powered applications to understand how intelligent systems can transform the way software is built.
                     </p>
                     <div class="about-tags">
                         <span class="about-tag">Java</span>
                         <span class="about-tag">Spring Boot</span>
                         <span class="about-tag">Microservices</span>
-                        <span class="about-tag">AWS</span>
                         <span class="about-tag">Kubernetes</span>
+                        <span class="about-tag">Docker</span>
+                        <span class="about-tag">Redis</span>
                         <span class="about-tag">Fintech</span>
-                        <span class="about-tag">AI Agents</span>
+                        <span class="about-tag">Generative AI</span>
+                        <span class="about-tag">RAG</span>
+                        <span class="about-tag">MCP</span>
                     </div>
                 </div>
 
-                <!-- Right: Ideas → Reality card -->
+                <!-- Right: Signature quote card -->
                 <div class="about-card">
-                    <h3 class="card-headline">Ideas <span class="arrow">&rarr;</span> Reality</h3>
-                    <p class="card-sub">Business problem in, modern product out.
-                        I own the whole arc from architecture to deployment.</p>
+                    <div class="about-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                    <blockquote class="about-quote">
+                        I don't just build APIs — I build the systems behind the experiences people rely on.
+                    </blockquote>
+                    <p class="card-sub" style="margin-bottom: 2rem;">Continuously learning, experimenting, and building — bridging Backend Engineering, Cloud, Fintech, and AI to create impactful technology.</p>
 
+                    <div class="about-focus-grid">
+                        <div class="about-focus-item">
+                            <div class="about-focus-icon"><i class="fa-solid fa-server"></i></div>
+                            <span class="about-focus-label">Backend<br>Engineering</span>
+                        </div>
+                        <div class="about-focus-item">
+                            <div class="about-focus-icon"><i class="fa-brands fa-aws"></i></div>
+                            <span class="about-focus-label">Cloud<br>Infrastructure</span>
+                        </div>
+                        <div class="about-focus-item">
+                            <div class="about-focus-icon"><i class="fa-solid fa-landmark"></i></div>
+                            <span class="about-focus-label">Fintech &amp;<br>Payments</span>
+                        </div>
+                        <div class="about-focus-item">
+                            <div class="about-focus-icon"><i class="fa-solid fa-brain"></i></div>
+                            <span class="about-focus-label">Generative<br>AI &amp; Agents</span>
+                        </div>
+                    </div>
+
+                    <!-- Ideas → Reality -->
+                    <div class="about-flow-divider">
+                        <span>How I work</span>
+                    </div>
                     <div class="about-flow">
-
                         <div class="process-step">
                             <div class="process-icon">
                                 <i class="fa-regular fa-lightbulb"></i>
                             </div>
                             <span class="process-label">Idea</span>
                         </div>
-
                         <div class="process-connector"></div>
-
                         <div class="process-step">
                             <div class="process-icon">
                                 <i class="fa-solid fa-compass-drafting"></i>
                             </div>
                             <span class="process-label">Architect</span>
                         </div>
-
                         <div class="process-connector"></div>
-
                         <div class="process-step">
                             <div class="process-icon">
                                 <i class="fa-solid fa-hammer"></i>
                             </div>
                             <span class="process-label">Build</span>
                         </div>
-
                         <div class="process-connector"></div>
-
                         <div class="process-step">
                             <div class="process-icon">
                                 <i class="fa-solid fa-rocket"></i>
                             </div>
                             <span class="process-label">Ship</span>
                         </div>
-
                     </div>
                 </div>
 
@@ -1569,7 +1802,7 @@
         <div class="container">
             <div class="section-heading">
                 <div class="section-eyebrow"><span>Journey &amp; Experience</span></div>
-                <h2>Building things that matter 🚀</h2>
+                <h2>Building things that matter <i class="fa-solid fa-bolt" style="font-size:0.85em; color:#818cf8; opacity:0.85;"></i></h2>
                 <p>A track record of engineering leadership, AI systems, and high-impact software.</p>
             </div>
 
@@ -1871,7 +2104,7 @@
         <div class="container">
             <div class="section-heading">
                 <div class="section-eyebrow"><span>Writing</span></div>
-                <h2>Medium Articles ✍️</h2>
+                <h2>Medium Articles <i class="fa-solid fa-pen-nib" style="font-size:0.8em; color:#818cf8; opacity:0.85;"></i></h2>
                 <p>Sharing my thoughts on software engineering, fintech, and system design.</p>
             </div>
 
