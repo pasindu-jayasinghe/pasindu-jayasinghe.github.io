@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Pasindu Jayasinghe - Software Engineer &amp; Backend Engineer</title>
-    <meta name="description" content="Pasindu Jayasinghe (Pasi) is a Software Engineer &amp; Backend Engineer based in Melbourne, Australia, specializing in Java, Spring Boot, microservices, REST APIs, fintech, and cloud-native systems.">
+    <meta name="description"
+        content="Pasindu Jayasinghe (Pasi) is a Software Engineer &amp; Backend Engineer based in Melbourne, Australia, specializing in Java, Spring Boot, microservices, REST APIs, fintech, and cloud-native systems.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap"
@@ -102,15 +103,22 @@
             position: absolute;
             inset: 0;
             background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(99, 102, 241, 0.08), transparent 60%),
-                        radial-gradient(ellipse 60% 80% at 25% 70%, rgba(139, 92, 246, 0.06), transparent 55%);
+                radial-gradient(ellipse 60% 80% at 25% 70%, rgba(139, 92, 246, 0.06), transparent 55%);
             animation: ambientShift 8s ease-in-out infinite alternate;
             pointer-events: none;
             z-index: 0;
         }
 
         @keyframes ambientShift {
-            0% { opacity: 0.5; transform: scale(1); }
-            100% { opacity: 1; transform: scale(1.08); }
+            0% {
+                opacity: 0.5;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1.08);
+            }
         }
 
         /* Floating geometric rings */
@@ -140,8 +148,13 @@
         }
 
         @keyframes ringFloat {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Grid fade — stronger at edges, transparent at centre */
@@ -758,6 +771,7 @@
                 height: 58px;
                 font-size: 1rem;
             }
+
             .about-card {
                 padding: 2rem 1.4rem;
             }
@@ -1615,7 +1629,8 @@
         <a href="#connect" id="mob-connect">Connect</a>
         <a href="#tech" id="mob-tech">Tech</a>
         <a href="#articles" id="mob-articles">Articles</a>
-        <a href="#hire" class="mobile-cta" id="mob-hire">Hire Me <i class="fas fa-arrow-right" style="font-size:0.8em;"></i></a>
+        <a href="#hire" class="mobile-cta" id="mob-hire">Hire Me <i class="fas fa-arrow-right"
+                style="font-size:0.8em;"></i></a>
     </div>
 
     <!-- Hero -->
@@ -1631,12 +1646,18 @@
                 <div class="profile-image">
                     <div class="profile-image-inner"></div>
                 </div>
-                <div class="hero-subtitle">Software &amp; Backend Engineer<br><span style="font-size: 0.85rem; color: #64748b; font-weight: 400;"><i class="fas fa-location-dot" style="margin-right: 4px;"></i>Melbourne, Australia</span></div>
+                <div class="hero-subtitle">Software &amp; Backend Engineer<br><span
+                        style="font-size: 0.85rem; color: #64748b; font-weight: 400;"><i class="fas fa-location-dot"
+                            style="margin-right: 4px;"></i>Melbourne, Australia</span></div>
                 <ul class="social-icons">
-                    <li><a href="https://twitter.com/pasindu_jaya" title="Twitter/X"><i class="fab fa-x-twitter"></i></a></li>
-                    <li><a href="https://www.facebook.com/pasicode/" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                    <li><a href="https://www.linkedin.com/in/pasindu-jayasinghe/" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
-                    <li><a href="https://github.com/pasindu-jayasinghe" title="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://twitter.com/pasindu_jaya" title="Twitter/X"><i
+                                class="fab fa-x-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/pasicode/" title="Facebook"><i
+                                class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/pasindu-jayasinghe/" title="LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://github.com/pasindu-jayasinghe" title="GitHub"><i class="fab fa-github"></i></a>
+                    </li>
                 </ul>
                 <div class="hero-interests">
                     <span class="hero-interests-label">Currently exploring</span>
@@ -1654,7 +1675,9 @@
 
                 <h1>Pasindu Jayasinghe</h1>
 
-                <p class="hero-bio">Software Engineer &amp; Backend Developer with 4+ years of experience building scalable systems across fintech, digital banking, and distributed platforms — now bridging Backend Engineering with Cloud &amp; AI.</p>
+                <p class="hero-bio">Software Engineer &amp; Backend Developer with 4+ years of experience building
+                    scalable systems across fintech, digital banking, and distributed platforms — now bridging Backend
+                    Engineering with Cloud &amp; AI.</p>
 
                 <div class="hero-stats">
                     <div class="hero-stat">
@@ -1704,16 +1727,26 @@
                     <div class="section-eyebrow" style="margin-bottom:0.85rem;">
                         <span>About Me</span>
                     </div>
-                    <h2 class="about-name">Hi, I'm <span class="name-highlight">Pasindu</span> <span style="font-weight:400; font-size:0.75em; color:#94a3b8;">(Pasi)</span></h2>
+                    <h2 class="about-name">Hi, I'm <span class="name-highlight">Pasindu</span> <span
+                            style="font-weight:400; font-size:0.75em; color:#94a3b8;">(Pasi)</span></h2>
                     <p class="about-role">Software Engineer &amp; Backend Developer &bull; Melbourne, Australia</p>
                     <p class="about-desc">
-                        I'm a <strong style="color:#e2e8f0;">Software Engineer and Backend Developer</strong> with <strong style="color:#e2e8f0;">4+ years of experience</strong> building scalable software solutions, with a strong focus on <strong style="color:#e2e8f0;">fintech, digital banking, and distributed systems</strong>.
+                        I'm a <strong style="color:#e2e8f0;">Software Engineer and Backend Developer</strong> with
+                        <strong style="color:#e2e8f0;">4+ years of experience</strong> building scalable software
+                        solutions, with a strong focus on <strong style="color:#e2e8f0;">fintech, digital banking, and
+                            sustainability systems</strong>.
                     </p>
                     <p class="about-desc">
-                        My engineering journey has taken me from backend applications to real-world <strong style="color:#e2e8f0;">digital banking and payment platforms</strong>, where reliability, security, scalability, and performance matter. I specialize in <strong style="color:#e2e8f0;">Java, Spring Boot, Microservices, REST APIs, Kubernetes, Docker, Redis, and cloud technologies</strong>.
+                        My engineering journey has taken me from backend applications to real-world <strong
+                            style="color:#e2e8f0;">digital banking and payment platforms</strong>, where reliability,
+                        security, scalability, and performance matter. I specialize in <strong
+                            style="color:#e2e8f0;">Java, Spring Boot, Microservices, REST APIs, Kubernetes, Docker,
+                            Redis, and cloud technologies</strong>.
                     </p>
                     <p class="about-desc">
-                        Now, I'm combining my backend experience with <strong style="color:#e2e8f0;">Cloud Computing and AI</strong> — exploring Generative AI, Agentic AI, RAG, MCP, and LLM-powered applications to understand how intelligent systems can transform the way software is built.
+                        Now, I'm combining my backend experience with <strong style="color:#e2e8f0;">Cloud Computing and
+                            AI</strong> — exploring Generative AI, Agentic AI, RAG, MCP, and LLM-powered applications to
+                        understand how intelligent systems can transform the way software is built.
                     </p>
                     <div class="about-tags">
                         <span class="about-tag">Java</span>
@@ -1726,6 +1759,7 @@
                         <span class="about-tag">Generative AI</span>
                         <span class="about-tag">RAG</span>
                         <span class="about-tag">MCP</span>
+                        <span class="about-tag">Sustainability</span>
                     </div>
                 </div>
 
@@ -1735,7 +1769,8 @@
                     <blockquote class="about-quote">
                         I don't just build APIs — I build the systems behind the experiences people rely on.
                     </blockquote>
-                    <p class="card-sub" style="margin-bottom: 2rem;">Continuously learning, experimenting, and building — bridging Backend Engineering, Cloud, Fintech, and AI to create impactful technology.</p>
+                    <p class="card-sub" style="margin-bottom: 2rem;">Continuously learning, experimenting, and building
+                        — bridging Backend Engineering, Cloud, Fintech, and AI to create impactful technology.</p>
 
                     <div class="about-focus-grid">
                         <div class="about-focus-item">
@@ -1753,6 +1788,10 @@
                         <div class="about-focus-item">
                             <div class="about-focus-icon"><i class="fa-solid fa-brain"></i></div>
                             <span class="about-focus-label">Generative<br>AI &amp; Agents</span>
+                        </div>
+                        <div class="about-focus-item">
+                            <div class="about-focus-icon"><i class="fa-solid fa-leaf"></i></div>
+                            <span class="about-focus-label">Sustainability</span>
                         </div>
                     </div>
 
@@ -1802,7 +1841,8 @@
         <div class="container">
             <div class="section-heading">
                 <div class="section-eyebrow"><span>Journey &amp; Experience</span></div>
-                <h2>Building things that matter <i class="fa-solid fa-bolt" style="font-size:0.85em; color:#818cf8; opacity:0.85;"></i></h2>
+                <h2>Building things that matter <i class="fa-solid fa-bolt"
+                        style="font-size:0.85em; color:#818cf8; opacity:0.85;"></i></h2>
                 <p>A track record of engineering leadership, AI systems, and high-impact software.</p>
             </div>
 
@@ -1946,7 +1986,8 @@
                     <div class="shipped-card">
                         <div class="shipped-company">CLIMATE SMART INITIATIVES</div>
                         <div class="shipped-title">Smart Carbon Calculator V2</div>
-                        <div class="shipped-description">Fullstack engineering for a carbon accounting platform supporting emission calculation, verification, and GHG reporting workflows.</div>
+                        <div class="shipped-description">Fullstack engineering for a carbon accounting platform
+                            supporting emission calculation, verification, and GHG reporting workflows.</div>
                         <div class="shipped-tags">
                             <span class="shipped-tag">Java</span>
                             <span class="shipped-tag">Spring Boot</span>
@@ -1963,7 +2004,9 @@
                     <div class="shipped-card">
                         <div class="shipped-company">CLIMATE SMART INITIATIVES</div>
                         <div class="shipped-title">TraCAD — Transport Climate Action Data Tool</div>
-                        <div class="shipped-description">Fullstack engineering for a web-based tool helping countries assess climate actions in transport — covering GHG impact, marginal abatement cost analysis, and tracking using international methodologies.</div>
+                        <div class="shipped-description">Fullstack engineering for a web-based tool helping countries
+                            assess climate actions in transport — covering GHG impact, marginal abatement cost analysis,
+                            and tracking using international methodologies.</div>
                         <div class="shipped-tags">
                             <span class="shipped-tag">Java</span>
                             <span class="shipped-tag">Spring Boot</span>
@@ -2104,7 +2147,8 @@
         <div class="container">
             <div class="section-heading">
                 <div class="section-eyebrow"><span>Writing</span></div>
-                <h2>Medium Articles <i class="fa-solid fa-pen-nib" style="font-size:0.8em; color:#818cf8; opacity:0.85;"></i></h2>
+                <h2>Medium Articles <i class="fa-solid fa-pen-nib"
+                        style="font-size:0.8em; color:#818cf8; opacity:0.85;"></i></h2>
                 <p>Sharing my thoughts on software engineering, fintech, and system design.</p>
             </div>
 
