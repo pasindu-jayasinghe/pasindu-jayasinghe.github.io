@@ -1047,7 +1047,7 @@
             font-weight: 700;
             color: #f8fafc;
             line-height: 1.35;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0;
         }
 
         .shipped-description {
@@ -1089,6 +1089,22 @@
         .shipped-link:hover {
             color: #a5b4fc;
             gap: 0.6rem;
+        }
+
+        .shipped-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .shipped-card-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 10px;
+            object-fit: cover;
+            flex-shrink: 0;
         }
 
         /* Connect Section */
@@ -1946,8 +1962,13 @@
 
                     <!-- Shipped Card 1: My CBM -->
                     <div class="shipped-card">
-                        <div class="shipped-company">PAYMEDIA</div>
-                        <div class="shipped-title">My CBM — ComBank Maldives Digital Banking</div>
+                        <div class="shipped-card-header">
+                            <div>
+                                <div class="shipped-company">PAYMEDIA</div>
+                                <div class="shipped-title">My CBM — ComBank Maldives Digital Banking</div>
+                            </div>
+                            <img src="images/my-cbm-icon.png" alt="My CBM Icon" class="shipped-card-icon">
+                        </div>
                         <div class="shipped-description">Backend engineering for a digital banking app covering
                             financial transaction processing, banking API integrations, and scalable backend services.
                         </div>
@@ -1970,8 +1991,13 @@
 
                     <!-- Shipped Card 2: DhiraaguPay -->
                     <div class="shipped-card">
-                        <div class="shipped-company">PAYMEDIA</div>
-                        <div class="shipped-title">DhiraaguPay — Digital Wallet</div>
+                        <div class="shipped-card-header">
+                            <div>
+                                <div class="shipped-company">PAYMEDIA</div>
+                                <div class="shipped-title">DhiraaguPay — Digital Wallet</div>
+                            </div>
+                            <img src="images/dhiraagupay-icon.png" alt="DhiraaguPay Icon" class="shipped-card-icon">
+                        </div>
                         <div class="shipped-description">Backend for a digital wallet supporting money transfers,
                             merchant payments, cash transactions, and mobile top-ups via REST &amp; SOAP payment
                             integrations.</div>
@@ -1990,8 +2016,13 @@
 
                     <!-- Shipped Card 3: Smart Carbon Calculator V2 -->
                     <div class="shipped-card">
-                        <div class="shipped-company">CLIMATE SMART INITIATIVES</div>
-                        <div class="shipped-title">Smart Carbon Calculator V2</div>
+                        <div class="shipped-card-header">
+                            <div>
+                                <div class="shipped-company">CLIMATE SMART INITIATIVES</div>
+                                <div class="shipped-title">Smart Carbon Calculator V2</div>
+                            </div>
+                            <img src="images/scc-icon.png" alt="Smart Carbon Calculator Icon" class="shipped-card-icon">
+                        </div>
                         <div class="shipped-description">Fullstack engineering for a carbon accounting platform
                             supporting emission calculation, verification, and GHG reporting workflows.</div>
                         <div class="shipped-tags">
@@ -2008,8 +2039,13 @@
 
                     <!-- Shipped Card 4: TraCAD -->
                     <div class="shipped-card">
-                        <div class="shipped-company">CLIMATE SMART INITIATIVES</div>
-                        <div class="shipped-title">TraCAD — Transport Climate Action Data Tool</div>
+                        <div class="shipped-card-header">
+                            <div>
+                                <div class="shipped-company">CLIMATE SMART INITIATIVES</div>
+                                <div class="shipped-title">TraCAD — Transport Climate Action Data Tool</div>
+                            </div>
+                            <img src="images/tracad-icon.jpg" alt="TraCAD Icon" class="shipped-card-icon">
+                        </div>
                         <div class="shipped-description">Fullstack engineering for a web-based tool helping countries
                             assess climate actions in transport — covering GHG impact, marginal abatement cost analysis,
                             and tracking using international methodologies.</div>
